@@ -1,0 +1,64 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+        headerBackground: "var(--header-background)",
+        easyAlertColor: "var(--easy-alert-color)",
+        darkGray: "var(--dark-gray)",
+        lightBlack: "var(--light-black)",
+        lightGray: "var(--light-gray)",
+      },
+      fontSize: {
+        title: [
+          "4rem",
+          { fontWeight: 700, lineHeight: "4.74rem", letterSpacing: "-0.04rem" },
+        ],
+        caption: [
+          "1rem",
+          { fontWeight: 500, lineHeight: "1.1875rem", letterSpacing: "0.8rem" },
+        ],
+      },
+      fontFamily: {
+        helveticaNeue: [
+          "var(--font-helvetica-neue)",
+          "helvetica",
+          "sans-serif",
+        ],
+        helveticaNeueMedium: [
+          "var(--font-helvetica-neue-medium)",
+          "helvetica",
+          "sans-serif",
+        ],
+      },
+      width: {
+        width530: "44.25rem",
+        width647: "40.44rem",
+        width501: "31.31rem",
+      },
+      maxWidth: {
+        fullWith: "2000px",
+      },
+      lineHeight: {
+        line76: "4.75rem",
+      },
+      boxShadow: {
+        shadowCard: "0 58px 92px rgba(1, 1, 1, 0.11)",
+      },
+      spacing: {
+        right476: "29.80rem",
+        right548: "34.25rem",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
