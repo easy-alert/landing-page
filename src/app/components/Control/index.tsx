@@ -9,13 +9,13 @@ export const Control = () => {
     <section className="flex justify-between mt-40 relative">
       <article className="flex flex-col justify-center w-width551 pl-28">
         <div className="flex flex-col gap-3 mb-8">
-          <h4 className="uppercase text-caption font-helveticaNeueMedium">
+          <h4 className="uppercase text-caption font-helveticaNeueMedium text-lightBlack">
             Simplifique e Organize
           </h4>
           <h2 className="text-title font-helveticaNeue">
             Controle eficiente de manutenções
           </h2>
-          <p className="text-lightGray leading-7 text-lg max-w-lg">
+          <p className="text-lightGray text-sectionParagraph max-w-lg">
             Tenha uma gestão visual do Plano de Manutenções, através do nosso
             Kanban e calendário de manutenções. Simplifique a organização e
             mantenha tudo sob controle.

@@ -3,6 +3,7 @@ import { About } from "./components/About";
 import partners from "@/assets/partners.svg";
 import { Plans } from "./components/Plans";
 import { Control } from "./components/Control";
+import { InfoReceivable } from "./components/InfoReceivable";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       </section>
       <Plans />
       <Control />
+      <InfoReceivable />
     </>
   );
 };

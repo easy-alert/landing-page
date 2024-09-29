@@ -26,6 +26,10 @@ const config: Config = {
           "1rem",
           { fontWeight: 500, lineHeight: "1.1875rem", letterSpacing: "0.8rem" },
         ],
+        sectionParagraph: [
+          "1.125rem",
+          { fontWeight: 400, lineHeight: "1.75rem " },
+        ],
       },
       fontFamily: {
         helveticaNeue: [
