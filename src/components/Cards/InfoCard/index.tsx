@@ -8,7 +8,7 @@ export interface IInfoCard {
 
 export const InfoCard = ({ icon, title, topics }: IInfoCard) => {
   return (
-    <article className="flex items-start gap-6 w-width501 h-56 shadow-shadowCard rounded-lg p-8">
+    <article className="flex items-start gap-6 max-w-width501 min-h-56 shadow-shadowCard rounded-lg p-8">
       <Image src={icon} alt="" />
       <div className="flex flex-col gap-2">
         <h4 className="font-helveticaNeue text-2xl">{title}</h4>

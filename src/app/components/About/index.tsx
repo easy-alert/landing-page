@@ -7,27 +7,37 @@ import { icons } from "@/assets/icons";
 
 export const About = () => {
   return (
-    <section className="flex  justify-between relative">
-      <div className="mt-28">
-        <div className="flex flex-col gap-4 pl-28 w-width530 text-lightBlack">
-          <h1 className="font-helveticaNeue text-title">
-            Seu melhor parceiro na gestão das manutenções
-          </h1>
-          <p className="text-lightGray text-lg leading-7">
-            Ajudamos a implantar um plano de manutenção preventiva para a
-            edificação, facilitando a gestão das manutenções para o síndico.
-          </p>
-          <div className="py-4">
-            <MainButton width="w-72">Agende uma demonstração</MainButton>
+    <section className="flex justify-between relative">
+      <div className="mt-28 flex justify-center w-full xl:w-auto">
+        <div>
+          <div className="flex px-4 flex-col gap-4 xl:pl-28 max-w-width530 text-lightBlack">
+            <h1 className="font-helveticaNeue text-title">
+              Seu melhor parceiro na gestão das manutenções
+            </h1>
+            <p className="hidden text-lightGray text-lg leading-7 xl:flex">
+              Ajudamos a implantar um plano de manutenção preventiva para a
+              edificação, facilitando a gestão das manutenções para o síndico.
+            </p>
+            <p className="text-lightGray text-lg leading-7 xl:hidden">
+              Com a Easy Alert, lembramos delas por você. Chegamos para
+              descomplicar a forma de controlar as manuteções preventivas,
+              criando experiência mais fácil e agradável na hora de cuidar do
+              dia a dia da edificação.
+            </p>
+            <div className="py-4">
+              <MainButton responsiveWidth="w-full" width="w-72">
+                Agende uma demonstração
+              </MainButton>
+            </div>
           </div>
-        </div>
-        <div className="absolute bottom-72 left-24">
-          <Image src={mouseSlip} alt="downScroll" />
+          <div className="hidden pl-28 mt-20 xl:flex">
+            <Image src={mouseSlip} alt="downScroll" />
+          </div>
         </div>
       </div>
       <div>
-        <Image src={person} alt="employee" width={955} />
-        <div className="w-full flex justify-end ">
+        <Image src={person} alt="" className="hidden xl:flex" />
+        <div className="w-full hidden justify-end  xl:flex">
           <div className="w-full h-28 bg-lightBlack rounded-tl-xl rounded-bl-xl flex items-center pl-6">
             <OutlineButton
               borderColor="border-white"

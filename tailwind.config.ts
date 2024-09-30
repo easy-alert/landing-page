@@ -16,6 +16,7 @@ const config: Config = {
         darkGray: "var(--dark-gray)",
         lightBlack: "var(--light-black)",
         lightGray: "var(--light-gray)",
+        veryLightGray: "var(--very-light-gray)"
       },
       fontSize: {
         title: [
@@ -50,6 +51,12 @@ const config: Config = {
       },
       maxWidth: {
         fullWith: "2000px",
+        width530: "44.25rem",
+        width647: "40.44rem",
+        width501: "31.31rem",
+      },
+      height:{
+        height500: "31.25rem"
       },
       lineHeight: {
         line76: "4.75rem",
@@ -59,8 +66,14 @@ const config: Config = {
       },
       spacing: {
         right476: "29.80rem",
-        right548: "34.25rem",
+        right548: "548px",
       },
+      backgroundImage: {
+        'phoneWithQrCode': "url('/phoneQrCode.svg')",
+      },
+      backgroundColor:{
+        easyAlertColor: "var(--easy-alert-color)",
+      }
     },
   },
   plugins: [],

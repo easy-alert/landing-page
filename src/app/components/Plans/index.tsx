@@ -37,9 +37,9 @@ export const Plans = () => {
   ];
 
   return (
-    <section className="flex px-28 gap-24 mt-36 relative">
+    <section className="flex flex-col-reverse px-4 items-center xl:flex-row xl:px-28 xl:items-start gap-24 mt-36 relative">
       <div className="flex gap-6">
-        <div className="flex flex-col gap-5">
+        <div className="hidden xl:flex flex-col gap-5">
           <div className="flex flex-col items-center">
             <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-gray-300 rounded-sm"></div>
             <div className="w-1 h-12 bg-gray-300"></div>
@@ -49,15 +49,23 @@ export const Plans = () => {
             <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-red-500 rounded-sm"></div>
           </div>
         </div>
-
-        <div className="flex flex-col gap-6">
-          {cardInfo.map(({ icon, title, topics }) => (
-            <InfoCard key={title} icon={icon} title={title} topics={topics} />
-          ))}
+        <div>
+          <div className="flex flex-col gap-6">
+            {cardInfo.map(({ icon, title, topics }) => (
+              <InfoCard key={title} icon={icon} title={title} topics={topics} />
+            ))}
+          </div>
+          <div>
+            <div className="flex justify-center mt-10 xl:hidden">
+              <MainButton responsiveWidth="w-full">
+                Agende uma demonstração
+              </MainButton>
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-        <div className="flex flex-col gap-3 mb-8 ">
+      <div className="flex flex-col items-center max-w-width530 xl:items-start">
+        <div className="flex flex-col gap-3 items-center mb-8 xl:items-start">
           <p className="font-helveticaNeueMedium text-caption uppercase">
             Padronizações e Agilidade
           </p>
@@ -71,9 +79,11 @@ export const Plans = () => {
             manutenções personalizadas.
           </p>
         </div>
-        <MainButton>Agende uma demonstração</MainButton>
+        <div className="hidden xl:flex">
+          <MainButton>Agende uma demonstração</MainButton>
+        </div>
       </div>
-      <div className="absolute bottom-0 right-0">
+      <div className="hidden absolute bottom-0 right-0 lg:flex">
         <Image src={detail} alt="" />
       </div>
     </section>

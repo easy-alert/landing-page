@@ -1,12 +1,10 @@
 import { MainButton } from "@/components/Buttons/MainButton";
 import notebook from "@/assets/notebook.svg";
-import details2 from "@/assets/details2.svg";
-import details3 from "@/assets/details3.svg";
 import Image from "next/image";
 
 export const Control = () => {
   return (
-    <section className="flex justify-between mt-40 relative">
+    <section className="flex flex-col justify-between mt-40 relative xl:flex-row">
       <article className="flex flex-col justify-center w-width551 pl-28">
         <div className="flex flex-col gap-3 mb-8">
           <h4 className="uppercase text-caption font-helveticaNeueMedium text-lightBlack">
@@ -21,23 +19,16 @@ export const Control = () => {
             mantenha tudo sob controle.
           </p>
         </div>
-        <div>
+        <div className="hidden xl:flex">
           <MainButton>Agende uma demonstração</MainButton>
         </div>
       </article>
-      <article className="mt-16">
+      <article className="flex justify-end mt-16 ">
         <Image className="relative z-20" src={notebook} alt="" />
       </article>
-      <Image
-        className="absolute z-10 top-0 right-right476"
-        src={details2}
-        alt=""
-      />
-      <Image
-        className="absolute z-10 top-20 right-right548"
-        src={details3}
-        alt=""
-      />
+      <div className="flex justify-center w-full xl:hidden">
+        <MainButton>Agende uma demonstração</MainButton>
+      </div>
     </section>
   );
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { MobileHeader } from "@/components/MobileHeader";
 
 const helveticaNeue = localFont({
   src: "./fonts/helveticaNeue/HelveticaNeueBold.otf",
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${helveticaNeue.variable} ${helveticaNeueRegular.variable} ${gtWalsheimPro.className} flex flex-col m-auto max-w-fullWith`}
       >
         <Header />
+        <MobileHeader />
         {children}
       </body>
     </html>

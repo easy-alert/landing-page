@@ -7,7 +7,7 @@ import { icons } from "@/assets/icons";
 
 export const Header = () => {
   return (
-    <header className="flex h-32 bg-headerBackground items-center justify-between gap-20 px-28">
+    <header className="hidden h-32 bg-headerBackground items-center justify-between gap-20  xl:flex lg:gap-6 lg:px-28">
       <Image src={easyAlertLogo} alt="logo" />
 
       <nav className="text-easyAlertColor">

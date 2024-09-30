@@ -7,4 +7,5 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   bgColor?: string;
   borderColor?: string;
   color?: string;
+  responsiveWidth?: string;
 }
