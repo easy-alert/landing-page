@@ -13,6 +13,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         headerBackground: "var(--header-background)",
         easyAlertColor: "var(--easy-alert-color)",
+        darkerGray: "var(--darker-gray)",
         darkGray: "var(--dark-gray)",
         lightBlack: "var(--light-black)",
         lightGray: "var(--light-gray)",
@@ -20,8 +21,8 @@ const config: Config = {
       },
       fontSize: {
         title: [
-          "4rem",
-          { fontWeight: 700, lineHeight: "4.74rem", letterSpacing: "-0.04rem" },
+          "3rem",
+          { fontWeight: 700, lineHeight: "3.6rem", letterSpacing: "-0.04rem" },
         ],
         caption: [
           "1rem",
@@ -30,7 +31,7 @@ const config: Config = {
         sectionParagraph: [
           "1.125rem",
           { fontWeight: 400, lineHeight: "1.75rem " },
-        ],
+        ]
       },
       fontFamily: {
         helveticaNeue: [
@@ -62,7 +63,7 @@ const config: Config = {
         line76: "4.75rem",
       },
       boxShadow: {
-        shadowCard: "0 58px 92px rgba(1, 1, 1, 0.11)",
+        shadowCard: "0 30px 92px rgba(1, 1, 1, 0.11)",
       },
       spacing: {
         right476: "29.80rem",
@@ -70,6 +71,7 @@ const config: Config = {
       },
       backgroundImage: {
         'phoneWithQrCode': "url('/phoneQrCode.svg')",
+        'operationMap': "url('/operationMap.svg')",
       },
       backgroundColor:{
         easyAlertColor: "var(--easy-alert-color)",

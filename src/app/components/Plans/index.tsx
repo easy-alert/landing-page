@@ -1,7 +1,7 @@
 import { icons } from "@/assets/icons";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { IInfoCard, InfoCard } from "@/components/Cards/InfoCard";
-import detail from "@/assets/detail.svg";
+import detail from "@/assets/details/detail.svg";
 
 import Image from "next/image";
 

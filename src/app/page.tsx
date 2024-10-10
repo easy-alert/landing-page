@@ -6,6 +6,7 @@ import { Control } from "./components/Control";
 import { InfoReceivable } from "./components/InfoReceivable";
 import { Law } from "./components/Law";
 import { PlatformEasy } from "./components/PlatformEasy";
+import { OperationMap } from "./components/OperationMap";
 // import { PlatformEasy } from "./components/PlatformEasy";
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Plans />
       <Control />
       <InfoReceivable />
+      <OperationMap />
       <PlatformEasy />
       <Law />
     </>
