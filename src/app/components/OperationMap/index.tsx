@@ -8,8 +8,16 @@ import rightDetail from "@/assets/details/rightDetail.svg";
 export const OperationMap = () => {
   return (
     <section className="flex justify-center gap-20 xl:px-28 xl:pt-16 mt-56 relative">
-      <Image src={leftDetail} alt="" className="absolute top-0 left-0" />
-      <Image src={rightDetail} alt="" className="absolute bottom-0 right-0" />
+      <Image
+        src={leftDetail}
+        alt=""
+        className="absolute top-0 left-0 hidden xl:flex"
+      />
+      <Image
+        src={rightDetail}
+        alt=""
+        className="absolute bottom-0 right-0 hidden xl:flex"
+      />
       <div className="w-width647 xl:flex xl:flex-1 items-center gap-44 ">
         <Image src={operationMap} alt="" className="hidden xl:flex" />
         <article className="flex flex-col items-center gap-8 xl:max-w-width530 xl:items-start">

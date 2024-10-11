@@ -64,6 +64,7 @@ const config: Config = {
       },
       boxShadow: {
         shadowCard: "0 30px 92px rgba(1, 1, 1, 0.11)",
+        shadowCardLessSpread: "10px 10px 20px rgba(1, 1, 1, 0.11)",
       },
       spacing: {
         right476: "29.80rem",

@@ -9,12 +9,20 @@ import abntImage from "@/assets/abntImage.svg";
 export const Law = () => {
   return (
     <section className="flex flex-col pt-56 pb-14 mt-14 gap-8 items-center relative xl:flex-row">
-      <Image src={leftDetail} alt="" className="absolute top-0 left-0" />
-      <Image src={rightDetail} alt="" className="absolute top-0 right-0" />
+      <Image
+        src={leftDetail}
+        alt=""
+        className="absolute top-0 left-0 hidden xl:flex"
+      />
+      <Image
+        src={rightDetail}
+        alt=""
+        className="absolute top-0 right-0 hidden xl:flex"
+      />
       <Image
         src={bottomRightDetail}
         alt=""
-        className="absolute bottom-0 right-0"
+        className="absolute bottom-0 right-0 hidden xl:flex"
       />
       <article className="flex flex-col items-center gap-8 px-28 xl:max-w-width530 xl:items-start">
         <div className="flex flex-col gap-3 items-center">
