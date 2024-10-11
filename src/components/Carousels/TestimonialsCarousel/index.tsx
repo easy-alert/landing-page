@@ -33,7 +33,7 @@ export const TestimonialsCarousel = () => {
     <>
       <div className="navigation-wrapper flex flex-col w-full justify-center relative">
         <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1 place-content-center grid py-32 px-10">
+          <div className="keen-slider__slide number-slide1 place-content-center grid py-32 p-10">
             <TestimonyCard
               name="Nome da Pessoa"
               position="cargo"
@@ -41,7 +41,7 @@ export const TestimonialsCarousel = () => {
             />
           </div>
 
-          <div className="keen-slider__slide number-slide2 place-content-center grid">
+          <div className="keen-slider__slide number-slide2 place-content-center grid p-10">
             <TestimonyCard
               name="Nome da Pessoa"
               position="cargo"
@@ -49,7 +49,7 @@ export const TestimonialsCarousel = () => {
             />
           </div>
 
-          <div className="keen-slider__slide number-slide3 place-content-center grid">
+          <div className="keen-slider__slide number-slide3 place-content-center grid p-10">
             <TestimonyCard
               name="Nome da Pessoa"
               position="cargo"
@@ -57,7 +57,7 @@ export const TestimonialsCarousel = () => {
             />
           </div>
 
-          <div className="keen-slider__slide number-slide4 place-content-center grid">
+          <div className="keen-slider__slide number-slide4 place-content-center grid p-10">
             <TestimonyCard
               name="Nome da Pessoa"
               position="cargo"
@@ -66,7 +66,7 @@ export const TestimonialsCarousel = () => {
           </div>
         </div>
         {loaded && instanceRef.current && (
-          <div className="flex w-full py-3 justify-center items-center absolute bottom-20">
+          <div className="w-full py-3 justify-center items-center absolute bottom-20 xl:flex">
             {[
               ...Array(
                 instanceRef.current.track.details.slides.length - 1

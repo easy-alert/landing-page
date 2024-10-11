@@ -17,7 +17,8 @@ const config: Config = {
         darkGray: "var(--dark-gray)",
         lightBlack: "var(--light-black)",
         lightGray: "var(--light-gray)",
-        veryLightGray: "var(--very-light-gray)"
+        veryLightGray: "var(--very-light-gray)",
+        inputBorder: "var(--input-border)"
       },
       fontSize: {
         title: [

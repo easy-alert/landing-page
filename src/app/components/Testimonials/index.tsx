@@ -7,7 +7,7 @@ import { TestimonialsCarousel } from "@/components/Carousels/TestimonialsCarouse
 
 export const Testimonials = () => {
   return (
-    <section id="testimonials">
+    <section id="depoimentos">
       <div className="flex flex-col gap-16  items-center">
         <h4 className="text-caption font-helveticaNeueMedium uppercase text-center">
           Depoimentos
@@ -50,8 +50,7 @@ export const Testimonials = () => {
             />
           </div>
         </div>
-        <TestimonialsCarousel />
-        <div className="flex flex-1"></div>
+        {/* <TestimonialsCarousel /> */}
       </div>
     </section>
   );

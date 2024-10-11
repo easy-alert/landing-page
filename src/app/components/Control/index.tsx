@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Control = () => {
   return (
     <section className="flex flex-col justify-between mt-40 relative xl:flex-row">
-      <article className="flex flex-col justify-center w-width551 pl-28">
+      <article className="flex flex-col justify-center w-width551 px-4 xl:pl-28">
         <div className="flex flex-col gap-3 mb-8">
           <h4 className="uppercase text-caption font-helveticaNeueMedium text-lightBlack">
             Simplifique e Organize
@@ -26,8 +26,10 @@ export const Control = () => {
       <article className="flex justify-end mt-16 ">
         <Image className="relative z-20" src={notebook} alt="" />
       </article>
-      <div className="flex justify-center w-full xl:hidden">
-        <MainButton>Agende uma demonstração</MainButton>
+      <div className="flex justify-center px-4 xl:hidden">
+        <MainButton responsiveWidth="w-full">
+          Agende uma demonstração
+        </MainButton>
       </div>
     </section>
   );

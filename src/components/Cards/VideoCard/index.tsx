@@ -15,13 +15,13 @@ export const VideoCard = ({
   videoRight,
 }: VideoCardProps) => {
   return (
-    <div className="flex flex-1 items-center px-52">
+    <div className="flex flex-1 items-center">
       <div className="flex items-center gap-6 flex-col xl:flex-row">
-        <div className="flex items-center justify-center bg-red-800 px-40 py-20 rounded-md xl:hidden">
+        <div className="flex items-center justify-center bg-red-800 px-40 py-20 rounded-md shadow-shadowCard xl:hidden ">
           <Image src={youtube} alt="youtube logo" />
         </div>
         {!videoRight && (
-          <div className="items-center justify-center bg-red-800 px-40 py-20 rounded-md hidden xl:flex">
+          <div className="items-center justify-center bg-red-800 px-40 py-20 rounded-md hidden shadow-shadowCard xl:flex">
             <Image src={youtube} alt="youtube logo" />
           </div>
         )}
@@ -35,7 +35,7 @@ export const VideoCard = ({
           </div>
         </article>
         {videoRight && (
-          <div className="items-center justify-center bg-red-800 px-40 py-20 rounded-md ml-6 hidden xl:flex">
+          <div className="items-center justify-center bg-red-800 px-40 py-20 rounded-md ml-6 hidden shadow-shadowCard xl:flex">
             <Image src={youtube} alt="youtube logo" />
           </div>
         )}

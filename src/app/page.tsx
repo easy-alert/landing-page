@@ -8,6 +8,7 @@ import { Law } from "./components/Law";
 import { PlatformEasy } from "./components/PlatformEasy";
 import { OperationMap } from "./components/OperationMap";
 import { Testimonials } from "./components/Testimonials";
+import { Contact } from "./components/Contact";
 // import { PlatformEasy } from "./components/PlatformEasy";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
       <PlatformEasy />
       <Law />
       <Testimonials />
+      <Contact />
     </>
   );
 };
