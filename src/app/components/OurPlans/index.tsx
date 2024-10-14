@@ -4,7 +4,7 @@ import { PlanCard } from "@/components/Cards/PlanCard";
 export const OurPlans = () => {
   return (
     <section className="flex flex-col mt-40 px-4 items-center justify-center xl:flex-row">
-      <div className="flex flex-col w-full justify-center items-center gap-10 xl:flex-row">
+      <div className="flex flex-col w-full justify-center items-center gap-5 xl:flex-row">
         <article className="flex flex-col gap-8 xl:max-w-width530 items-center xl:items-start">
           <div className="flex flex-col gap-3">
             <h4 className="text-caption font-helveticaNeueMedium uppercase text-veryLightGray">

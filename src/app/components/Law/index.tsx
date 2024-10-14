@@ -8,7 +8,7 @@ import abntImage from "@/assets/abntImage.svg";
 
 export const Law = () => {
   return (
-    <section className="flex flex-col pt-56 pb-14 mt-14 gap-8 items-center relative xl:flex-row">
+    <section className="flex flex-col pt-56 pb-14 mt-14 gap-8 items-center jusc relative xl:flex-row">
       <Image
         src={leftDetail}
         alt=""
