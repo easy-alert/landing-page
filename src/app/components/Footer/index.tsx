@@ -8,6 +8,7 @@ import YoutubeFilled from "../../../assets/youtubeFilled.svg";
 import ArrowUp from "../../../assets/arrowUp.svg";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 export const Footer = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -54,12 +55,23 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col flex-1 gap-5">
           <h6 className="text-white">Info</h6>
-          <div className="flex flex-col gap-1">
-            <p className="text-white opacity-60">Sobre</p>
-            <p className="text-white opacity-60">Funcionalidades</p>
-            <p className="text-white opacity-60">Depoimentos</p>
-            <p className="text-white opacity-60">Normas</p>
-            <p className="text-white opacity-60">Planos</p>
+          <div className="flex items-start">
+            <ul className="flex flex-col">
+              {[
+                "Sobre",
+                "Funcionalidades",
+                "Depoimentos",
+                "Normas",
+                "Planos",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="transition-transform hover:scale-105 text-white opacity-60"
+                >
+                  <Link href={`#${item}`}>{item}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="flex flex-col flex-1 gap-5 relative">
