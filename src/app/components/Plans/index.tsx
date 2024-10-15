@@ -37,7 +37,10 @@ export const Plans = () => {
   ];
 
   return (
-    <section className="flex flex-col-reverse px-4 items-center xl:flex-row xl:px-28 xl:items-start gap-24 mt-36 relative">
+    <section
+      id="Funcionalidades"
+      className="flex flex-col-reverse px-4 items-center xl:flex-row xl:px-28 xl:items-start gap-24 mt-36 relative"
+    >
       <div className="flex gap-6">
         <div className="hidden xl:flex flex-col gap-5">
           <div className="flex flex-col items-center">
@@ -65,14 +68,14 @@ export const Plans = () => {
         </div>
       </div>
       <div className="flex flex-col items-center max-w-width530 xl:items-start">
-        <div className="flex flex-col gap-3 items-center mb-8 xl:items-start">
+        <div className="flex flex-col gap-3 items-center mb-8 max-w-lg xl:items-start">
           <p className="font-helveticaNeueMedium text-caption uppercase">
             Padronizações e Agilidade
           </p>
           <h2 className="font-helveticaNeue text-title text-lightBlack">
             Plano de manutenção personalizado
           </h2>
-          <p className="text-lightGray leading-7 text-lg max-w-lg">
+          <p className="text-lightGray leading-7 text-lg">
             Aproveite nossa base de manutenções, desenvolvida conforme a NBR
             5674:2012 (Manutenção de Edificações - Procedimento), e adapte-a às
             necessidades do seu condomínio, adicionando suas próprias

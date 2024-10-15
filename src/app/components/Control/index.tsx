@@ -5,15 +5,15 @@ import Image from "next/image";
 export const Control = () => {
   return (
     <section className="flex flex-col justify-between mt-40 relative xl:flex-row">
-      <article className="flex flex-col justify-center w-width551 px-4 xl:pl-28">
-        <div className="flex flex-col gap-3 mb-8">
+      <article className="flex flex-col justify-center items-center w-width551 px-4 xl:pl-28">
+        <div className="flex flex-col gap-3 mb-8 max-w-lg">
           <h4 className="uppercase text-caption font-helveticaNeueMedium text-lightBlack">
             Simplifique e Organize
           </h4>
           <h2 className="text-title font-helveticaNeue">
             Controle eficiente de manutenções
           </h2>
-          <p className="text-lightGray text-sectionParagraph max-w-lg">
+          <p className="text-lightGray text-sectionParagraph">
             Tenha uma gestão visual do Plano de Manutenções, através do nosso
             Kanban e calendário de manutenções. Simplifique a organização e
             mantenha tudo sob controle.

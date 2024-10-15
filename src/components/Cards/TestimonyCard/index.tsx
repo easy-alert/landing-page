@@ -14,7 +14,7 @@ export const TestimonyCard = ({
   position,
 }: TestimonyCardProps) => {
   return (
-    <div className="flex flex-col items-start gap-4 max-w-width501 shadow-shadowCardLessSpread rounded-lg p-8 bg-white">
+    <div className="flex flex-col items-start gap-4 shadow-shadowCardLessSpread rounded-lg p-8 bg-white">
       <div className="flex gap-6">
         {image ? (
           <Image src={image} alt="" className="w-8 h-8 rounded-full" />

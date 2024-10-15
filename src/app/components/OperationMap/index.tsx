@@ -18,9 +18,9 @@ export const OperationMap = () => {
         alt=""
         className="absolute bottom-0 right-0 hidden xl:flex"
       />
-      <div className="w-width647 xl:flex xl:flex-1 items-center gap-44 ">
+      <div className="w-width647 flex xl:flex-1 items-center justify-center gap-44">
         <Image src={operationMap} alt="" className="hidden xl:flex" />
-        <article className="flex flex-col items-center gap-8 xl:max-w-width530 xl:items-start">
+        <article className="flex flex-col items-center gap-8 max-w-lg px-4 xl:max-w-width530 xl:items-start">
           <div className="flex flex-col gap-3">
             <h4 className="text-caption font-helveticaNeueMedium uppercase text-veryLightGray">
               Sempre presente

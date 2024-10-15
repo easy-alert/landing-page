@@ -7,7 +7,7 @@ import { icons } from "@/assets/icons";
 
 export const About = () => {
   return (
-    <section className="flex justify-between relative">
+    <section id="Sobre" className="flex justify-between relative">
       <div className="mt-28 flex justify-center w-full xl:w-auto">
         <div>
           <div className="flex px-4 flex-col gap-4 xl:pl-28 max-w-width530 text-lightBlack">

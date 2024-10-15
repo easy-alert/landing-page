@@ -12,6 +12,10 @@ import { useEffect, useState } from "react";
 export const Footer = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
 
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
@@ -27,17 +31,18 @@ export const Footer = () => {
 
   return (
     <footer
-      id="sobre"
-      className="flex flex-col bg-easyAlertColor py-8 px-10 mt-28 gap-6 h-[475px]"
+      id="Rodape"
+      className="flex flex-col bg-easyAlertColor py-8 px-10 mt-28 gap-6 xl:h-[475px]"
     >
-      <div className="flex justify-between items-center">
-        <Image src={LogoFooter} alt="EasyAlert logo" />
+      <div className="flex flex-col gap-6 justify-between xl:items-center xl:flex-row">
+        <Image src={LogoFooter} alt="EasyAlert logo" className="self-center" />
+        <hr className="bg-white flex flex-1 opacity-20 xl:hidden" />
         <MainButton bgColor="bg-white" color="text-easyAlertColor font-bold">
           Agende uma demonstração
         </MainButton>
       </div>
-      <hr className="bg-white opacity-20" />
-      <div className="flex flex-1">
+      <hr className="bg-white opacity-20 hidden xl:flex" />
+      <div className="flex flex-1 flex-col-reverse gap-6 xl:flex-row">
         <div className="flex flex-col flex-1 justify-between">
           <div className="flex flex-col gap-5">
             <h6 className="text-white">Endereço</h6>
@@ -63,7 +68,7 @@ export const Footer = () => {
             <p className="text-white opacity-60">(48) 99168-0913</p>
             <p className="text-white opacity-60">contato@easyalert.com.br</p>
           </div>
-          <div className="flex gap-2 items-center absolute top-0 right-0">
+          <div className="flex gap-2 items-center xl:absolute xl:top-0 xl:right-0">
             <button className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105">
               <Image src={Instagram} alt="Ir para Instagram" />
             </button>
@@ -77,7 +82,10 @@ export const Footer = () => {
         </div>
       </div>
       {scrollPosition !== 0 ? (
-        <button className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 fixed bottom-12 right-10">
+        <button
+          onClick={goToTop}
+          className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 fixed bottom-12 right-10"
+        >
           <Image src={ArrowUp} alt="Ir para topo da página" />
         </button>
       ) : null}

@@ -5,12 +5,12 @@ import phoneResponsive from "@/assets/phoneResponsive.svg";
 
 export const InfoReceivable = () => {
   return (
-    <section className="flex justify-start gap-32 mt-56 items-start">
+    <section className="flex justify-center gap-32 mt-56 items-start xl:justify-start">
       <div className="hidden xl:flex">
         <Image src={phone} alt="" className="" />
       </div>
-      <article className="flex flex-col items-center mr= gap-8 xl:max-w-width530  xl:items-start">
-        <div className="flex flex-col gap-3">
+      <article className="flex flex-col gap-8 items-center px-4 xl:max-w-width530 xl:items-start">
+        <div className="flex flex-col gap-3 max-w-lg">
           <h4 className="text-caption font-helveticaNeueMedium uppercase text-veryLightGray">
             Tudo por WhatsApp
           </h4>

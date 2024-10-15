@@ -15,7 +15,7 @@ export const Header = () => {
           {["Sobre", "Funcionalidades", "Depoimentos", "Normas", "Planos"].map(
             (item) => (
               <li key={item} className="transition-transform hover:scale-105">
-                <Link href="#">{item}</Link>
+                <Link href={`#${item}`}>{item}</Link>
               </li>
             )
           )}
