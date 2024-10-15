@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import easyAlertLogo from "@/assets/easyAlertLogo.svg";
 import Link from "next/link";
@@ -23,7 +25,12 @@ export const Header = () => {
       </nav>
       <div className="flex gap-5">
         <MainButton width="w-64">Agende uma demonstração</MainButton>
-        <OutlineButton width="w-32">
+        <OutlineButton
+          width="w-32"
+          onClick={() =>
+            window.open("https://company.easyalert.com.br/login", "_blank")
+          }
+        >
           <Image src={icons.user} alt="" /> Login
         </OutlineButton>
       </div>

@@ -81,13 +81,31 @@ export const Footer = () => {
             <p className="text-white opacity-60">contato@easyalert.com.br</p>
           </div>
           <div className="flex gap-2 items-center xl:absolute xl:top-0 xl:right-0">
-            <button className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105">
+            <button
+              className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
+              onClick={() =>
+                window.open("https://www.instagram.com/easy.alert", "_blank")
+              }
+            >
               <Image src={Instagram} alt="Ir para Instagram" />
             </button>
-            <button className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105">
+            <button
+              className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
+              onClick={() =>
+                window.open(
+                  "https://www.facebook.com/easyalert.sistema",
+                  "_blank"
+                )
+              }
+            >
               <Image src={Facebook} alt="Ir para Facebook" />
             </button>
-            <button className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105">
+            <button
+              className="h-10 w-10 bg-red-400 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
+              onClick={() =>
+                window.open("https://www.youtube.com/@easyalert4402", "_blank")
+              }
+            >
               <Image src={YoutubeFilled} alt="Ir para Youtube" />
             </button>
           </div>
