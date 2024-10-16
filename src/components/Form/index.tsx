@@ -94,7 +94,7 @@ export const Form = () => {
               placeholder="Digite sua mensagem"
             />
           </div>
-          <MainButton disabled={onQuery} type="submit">
+          <MainButton disabled={onQuery} type="submit" onClick={() => {}}>
             {onQuery ? <Spinner /> : "Enviar mensagem"}
           </MainButton>
         </form>
