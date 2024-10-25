@@ -45,7 +45,11 @@ export default function AutoLoopCarousel({
           key={index}
           className="keen-slider__slide place-content-center grid"
         >
-          <Image src={item} alt="" />
+          <Image
+            src={item}
+            alt=""
+            style={{ height: "100px", width: "auto", objectFit: "contain" }}
+          />
         </div>
       ))}
     </div>

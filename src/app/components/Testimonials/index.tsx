@@ -31,22 +31,25 @@ export const Testimonials = () => {
 
           <div className="flex flex-col gap-16">
             <VideoCard
-              title="Nome da pessoa no depoimento"
-              position="Síndico"
-              description="Resumo do vídeo"
+              src="https://www.youtube.com/embed/lI6M36t9pJg?si=eWMqsRHOv2Y5tfg8"
+              title="Jackson"
+              position="Construfase"
+              description="A plataforma trouxe uma mudança de cultura, tornando as manutenções preventivas mais eficazes e o condomínio sempre em dia."
             />
 
             <VideoCard
-              title="Nome da pessoa no depoimento"
-              position="Síndico"
-              description="Resumo do vídeo"
+              src="https://www.youtube.com/embed/72p71wycHac?si=6XwMdDNE4R64vCbj"
+              title="Tiago"
+              position="Constate"
+              description="A implementação da plataforma alerta proprietários para a importância da manutenção preventiva, reduzindo custos e prolongando a vida útil dos empreendimentos."
               videoRight
             />
 
             <VideoCard
-              title="Nome da pessoa no depoimento"
-              position="Síndico"
-              description="Resumo do vídeo"
+              src="https://www.youtube.com/embed/OMBar4BqLRU?si=NvI1BEUqytxt7vjt"
+              title="Ana Paula"
+              position="Mindset"
+              description="A plataforma facilitou nosso trabalho, tornando a manutenção transparente para os moradores e liberando nossa equipe para outras atividades essenciais."
             />
           </div>
         </div>

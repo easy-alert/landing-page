@@ -1,7 +1,5 @@
 import axios from "axios";
 
-export const baseURL = process.env.BASE_URL || "";
-
 export const formApi = axios.create({
-  baseURL: process.env.BASE_URL,
+  baseURL: "https://webhook.hablla.com/v1/66f2bcf870c54828e7da82d0",
 });

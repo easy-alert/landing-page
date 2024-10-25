@@ -48,10 +48,10 @@ export const Footer = () => {
           <div className="flex flex-col gap-5">
             <h6 className="text-white">Endereço</h6>
             <address className="not-italic text-white opacity-60">
-              Criciuma - SC
+              Criciúma - SC
             </address>
           </div>
-          <p className="text-white opacity-60">&#169; 2023 — Copyright</p>
+          <p className="text-white opacity-60">&#169; 2024 — Copyright</p>
         </div>
         <div className="flex flex-col flex-1 gap-5">
           <h6 className="text-white">Info</h6>
