@@ -43,15 +43,15 @@ export const TestimonialsCarousel = () => {
     },
     {
       name: "Lavínia",
-      position: "Cargo",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis vitae urna eu finibus. Maecenas quis pellentesque risus. Praesent urna massa, ultrices vel ex et, eleifend feugiat odio. Sed eleifend lectus interdum eget.",
-    },
-    {
-      name: "Engenheira de Manutenção",
-      position: "Cargo",
+      position: "Engenheira de Manutenção",
       description:
         "A plataforma é muito importante pro condomínio, quanto para Construtora. Quando deixamos tudo registrado, o impacto na assistência técnica é bem considerável. A plataforma Easy Alert é de extremo valor para nós e como a Fontana, o time da Easy cuida de todos os detalhes e demonstra atenção e cuidado ao fazer a plataforma rodar junto aos condomínios, portanto, Easy Alert nota 10!",
+    },
+    {
+      name: "Ana Soares",
+      position: "Síndica Profissional",
+      description:
+        "Vale muito o investimento. Esse era o maior dos meus problemas, controlar as manutenções preventivas de forma eficaz. A Easy Alert resolveu. Parabéns pelo sistema excelente!",
     },
     {
       name: "Fábio Quintanilha",
