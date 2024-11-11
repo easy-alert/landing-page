@@ -14,13 +14,11 @@ export const Header = () => {
 
       <nav className="text-easyAlertColor">
         <ul className="flex space-x-8">
-          {["Sobre", "Funcionalidades", "Depoimentos", "Normas", "Planos"].map(
-            (item) => (
-              <li key={item} className="transition-transform hover:scale-105">
-                <Link href={`#${item}`}>{item}</Link>
-              </li>
-            )
-          )}
+          {["Sobre", "Funcionalidades", "Depoimentos", "Normas"].map((item) => (
+            <li key={item} className="transition-transform hover:scale-105">
+              <Link href={`#${item}`}>{item}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
       <div className="flex gap-5">
