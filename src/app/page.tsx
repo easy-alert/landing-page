@@ -41,7 +41,7 @@ import { PlatformEasy } from "./components/PlatformEasy";
 import { OperationMap } from "./components/OperationMap";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
-import { OurPlans } from "./components/OurPlans";
+// import { OurPlans } from "./components/OurPlans";
 import { Footer } from "./components/Footer";
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
 // import { PlatformEasy } from "./components/PlatformEasy";
@@ -108,7 +108,7 @@ const App = () => {
       </section>
       <Testimonials />
       <Contact />
-      <OurPlans />
+      {/* <OurPlans /> */}
       <Footer />
     </>
   );
