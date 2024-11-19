@@ -10,7 +10,7 @@ export const OutlineButton = ({
   height = "h-14",
   onClick = () =>
     window.open(
-      "https://api.whatsapp.com/send?phone=5548991680913&text=Olá,%20quero%20saber%20mais%20sobre%20a%20Easy%20Alert",
+      "https://wa.me/5548991537724?text=Oi%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o",
       "_blank"
     ),
 }: IButton) => {

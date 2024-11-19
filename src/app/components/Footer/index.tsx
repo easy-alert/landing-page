@@ -57,20 +57,16 @@ export const Footer = () => {
           <h6 className="text-white">Info</h6>
           <div className="flex items-start">
             <ul className="flex flex-col">
-              {[
-                "Sobre",
-                "Funcionalidades",
-                "Depoimentos",
-                "Normas",
-                "Planos",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="transition-transform hover:scale-105 text-white opacity-60"
-                >
-                  <Link href={`#${item}`}>{item}</Link>
-                </li>
-              ))}
+              {["Sobre", "Funcionalidades", "Depoimentos", "Normas"].map(
+                (item) => (
+                  <li
+                    key={item}
+                    className="transition-transform hover:scale-105 text-white opacity-60"
+                  >
+                    <Link href={`#${item}`}>{item}</Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
