@@ -4,6 +4,7 @@ import paintBrush from "./paintBrush.svg";
 import house from "./house.svg";
 import water from "./water.svg";
 import menuHamburguer from "./menuHamburguer.svg";
+import x from "./x.svg";
 
 export const icons = {
   menuHamburguer,
@@ -12,4 +13,5 @@ export const icons = {
   house,
   paintBrush,
   water,
+  x,
 };
