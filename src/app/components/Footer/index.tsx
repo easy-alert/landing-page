@@ -73,8 +73,9 @@ export const Footer = () => {
         <div className="flex flex-col flex-1 gap-5 relative">
           <h6 className="text-white">Contato</h6>
           <div className="flex flex-col gap-1">
-            <p className="text-white opacity-60">(48) 9 9153-7724</p>
-            <p className="text-white opacity-60">contato@easyalert.com.br</p>
+            <p className="text-white opacity-60">Telefone: (48) 2102-6465</p>
+            <p className="text-white opacity-60">WhatsApp: (48) 9 9153-7724</p>
+            <p className="text-white opacity-60">E-mail: contato@easyalert.com.br</p>
           </div>
           <div className="flex gap-2 items-center xl:absolute xl:top-0 xl:right-0">
             <button
