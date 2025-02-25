@@ -6,6 +6,7 @@ import Instagram from "../../../assets/instagram.svg";
 import Facebook from "../../../assets/facebook.svg";
 import YoutubeFilled from "../../../assets/youtubeFilled.svg";
 import ArrowUp from "../../../assets/arrowUp.svg";
+import WhatsApp from "../../../assets/whatsapp.svg";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -75,7 +76,9 @@ export const Footer = () => {
           <div className="flex flex-col gap-1">
             <p className="text-white opacity-60">Telefone: (48) 2102-6465</p>
             <p className="text-white opacity-60">WhatsApp: (48) 9 9153-7724</p>
-            <p className="text-white opacity-60">E-mail: contato@easyalert.com.br</p>
+            <p className="text-white opacity-60">
+              E-mail: contato@easyalert.com.br
+            </p>
           </div>
           <div className="flex gap-2 items-center xl:absolute xl:top-0 xl:right-0">
             <button
@@ -109,12 +112,22 @@ export const Footer = () => {
         </div>
       </div>
       {scrollPosition !== 0 ? (
-        <button
-          onClick={goToTop}
-          className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 fixed bottom-12 right-10"
-        >
-          <Image src={ArrowUp} alt="Ir para topo da página" />
-        </button>
+      <div className="flex gap-2 items-center fixed bottom-12 right-10">
+      <button
+        onClick={() =>
+          window.open("https://wa.me/5548991537724", "_blank")
+        }
+        className="h-12 w-12 bg-green-500 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer"
+      >
+        <Image src={WhatsApp} alt="Ir para o WhatsApp" />
+      </button>
+      <button
+        onClick={goToTop}
+        className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer"
+      >
+        <Image src={ArrowUp} alt="Ir para o topo da página" />
+      </button>
+    </div>
       ) : null}
     </footer>
   );
