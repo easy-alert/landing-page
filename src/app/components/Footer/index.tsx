@@ -112,18 +112,18 @@ export const Footer = () => {
         </div>
       </div>
       {scrollPosition !== 0 ? (
-      <div className="flex gap-2 items-center fixed bottom-12 right-10">
+      <div className="flex gap-2 items-center fixed bottom-12 right-10 z-30" >
       <button
-        onClick={() =>
-          window.open("https://wa.me/5548991537724", "_blank")
+        onClick={() => 
+          window.open("https://wa.me/5548991537724", "_blank " )
         }
-        className="h-12 w-12 bg-green-500 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer"
+        className="h-12 w-12 bg-green-500 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer "
       >
         <Image src={WhatsApp} alt="Ir para o WhatsApp" />
       </button>
       <button
         onClick={goToTop}
-        className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer"
+        className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105 cursor-pointer "
       >
         <Image src={ArrowUp} alt="Ir para o topo da página" />
       </button>
