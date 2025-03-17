@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { About } from "./components/About";
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
@@ -41,14 +42,31 @@ import { PlatformEasy } from "./components/PlatformEasy";
 import { OperationMap } from "./components/OperationMap";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
-// import { OurPlans } from "./components/OurPlans";
 import { Footer } from "./components/Footer";
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
-// import { PlatformEasy } from "./components/PlatformEasy";
 
 const App = () => {
   return (
     <>
+      {/* Injetando as tags do Google no head da página */}
+      <Head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16933724240"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-16933724240');
+            `,
+          }}
+        />
+      </Head>
+
+      {/* Conteúdo da página */}
       <About />
       <section className="w-full mt-14">
         <h4 className="text-caption p-5 pb-10 font-helveticaNeueMedium uppercase text-center">
@@ -108,7 +126,6 @@ const App = () => {
       </section>
       <Testimonials />
       <Contact />
-      {/* <OurPlans /> */}
       <Footer />
     </>
   );
