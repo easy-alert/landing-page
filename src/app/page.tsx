@@ -1,5 +1,8 @@
-import Head from "next/head";
-import { About } from "./components/About";
+import Script from "next/script";
+
+
+import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
+
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
 import partners_3 from "@/assets/partners/partners_3.svg";
@@ -43,28 +46,43 @@ import { OperationMap } from "./components/OperationMap";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
+import { About } from "./components/About";
 
 const App = () => {
   return (
     <>
-      {/* Injetando as tags do Google no head da página */}
-      <Head>
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16933724240"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'AW-16933724240');
-            `,
-          }}
-        />
-      </Head>
+      {/* Google Tag Manager Script */}
+      <Script
+        id="google-tag-manager"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-PRS45NCB');
+          `,
+        }}
+      />
+
+      {/* Google Analytics Script */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=AW-16933724240"
+        strategy="afterInteractive"
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16933724240');
+          `,
+        }}
+      />
 
       {/* Conteúdo da página */}
       <About />
