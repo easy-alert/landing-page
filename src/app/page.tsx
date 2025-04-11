@@ -66,24 +66,6 @@ const App = () => {
         }}
       />
 
-      {/* Google Analytics Script */}
-      <Script
-        src="https://www.googletagmanager.com/gtag/js?id=AW-16933724240"
-        strategy="afterInteractive"
-      />
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-16933724240');
-          `,
-        }}
-      />
-
       {/* Conteúdo da página */}
       <About />
       <section className="w-full mt-14">
