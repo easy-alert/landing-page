@@ -46,6 +46,11 @@ export const Form = () => {
       .then(() => {
         setIsSubmitted(true);
         reset();
+
+        window.open(
+          "https://wa.me/5548991537724?text=Oi%2C%20gostaria%20de%20agendar%20uma%20demonstra%C3%A7%C3%A3o",
+          "_blank"
+        );
       })
       .finally(() => {
         setOnQuery(false);
@@ -94,7 +99,7 @@ export const Form = () => {
               placeholder="Digite sua mensagem"
             />
           </div>
-          <MainButton disabled={onQuery} type="submit" onClick={() => {}}>
+          <MainButton disabled={onQuery} type="submit">
             {onQuery ? <Spinner /> : "Enviar mensagem"}
           </MainButton>
         </form>
