@@ -5,6 +5,8 @@ import house from "./house.svg";
 import water from "./water.svg";
 import menuHamburguer from "./menuHamburguer.svg";
 import x from "./x.svg";
+import telephone from "./telephone.svg"
+import mail from "./mail.svg"
 
 export const icons = {
   menuHamburguer,
@@ -14,4 +16,6 @@ export const icons = {
   paintBrush,
   water,
   x,
+  telephone,
+  mail,
 };
