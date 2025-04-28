@@ -71,8 +71,6 @@ export const metadata: Metadata = {
 
 };
 
-console.log(process.env.npm_package_name)
-
 const App = () => {
   return (
     <>
