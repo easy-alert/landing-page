@@ -1,5 +1,5 @@
+import { Metadata } from 'next';
 import Script from "next/script";
-
 
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
 
@@ -47,6 +47,29 @@ import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { About } from "./components/About";
+
+export const metadata: Metadata = {
+  title: "Easy Alert",
+  applicationName: process.env.npm_package_name,
+  description: "Easy Alert - Plataforma de Gestão de Manutenção e Segurança",
+  other: {
+    appName: process.env.npm_package_name || "new-lp",
+    appVersion: process.env.npm_package_version || "1.0.0",
+    buildTime: new Date().toISOString(),
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: [
+    "Easy Alert",
+    "Plataforma de Gestão de Manutenção e Segurança",
+    "Gestão de Manutenção",
+    "Segurança",
+    "Tecnologia",
+    "Inovação",
+  ],
+
+};
 
 const App = () => {
   return (
