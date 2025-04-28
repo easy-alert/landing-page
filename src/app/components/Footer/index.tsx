@@ -60,9 +60,9 @@ export const Footer = () => {
       return;
     }
 
-    setShowPopup(true); 
+    setShowPopup(true);
     setTimeout(() => {
-      setShowPopup(false); 
+      setShowPopup(false);
     }, 4000);
 
     const formData = {
@@ -101,7 +101,7 @@ export const Footer = () => {
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-    setShowPopup(false); 
+    setShowPopup(false);
   };
   const handleInfoClick = (contactType: string) => {
     if (contactType === "telefone") {
@@ -200,22 +200,25 @@ export const Footer = () => {
         </div>
       </div>
 
-      {scrollPosition !== 0 && (
-        <div className="flex gap-2 items-center fixed bottom-12 right-10 z-30">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            className="h-14 w-14 bg-green-500 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
-          >
-            <Image src={WhatsApp} alt="Formulário de contato" />
-          </button>
+      <div className="flex gap-2 items-center fixed bottom-12 right-10 z-30"></div>
+
+      <div className="flex gap-2 items-center fixed bottom-12 right-10 z-30">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="h-14 w-14 bg-green-500 flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
+        >
+          <Image src={WhatsApp} alt="Formulário de contato" />
+        </button>
+
+        {scrollPosition !== 0 && (
           <button
             onClick={goToTop}
             className="h-12 w-12 bg-white flex items-center justify-center rounded-full hover:shadow-2xl transition-transform hover:scale-105"
           >
             <Image src={ArrowUp} alt="Ir ao topo" />
           </button>
-        </div>
-      )}
+        )}
+      </div>
 
       {isModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -378,7 +381,7 @@ export const Footer = () => {
                 type="submit"
                 className="bg-easyAlertColor text-white font-semibold py-2 px-4 rounded hover:bg-opacity-90 transition"
               >
-               Solicitar contato
+                Solicitar contato
               </button>
             </form>
           </div>
