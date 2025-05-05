@@ -1,11 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import person from "@/assets/person.svg";
 import mouseSlip from "@/assets/mouseSlip.svg";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { OutlineButton } from "@/components/Buttons/OutlineButton";
 import { icons } from "@/assets/icons";
+import { useState } from "react";
+import { HabllaForm } from "@/components/HabllaForm";
 
 export const About = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <section id="Sobre" className="flex justify-between relative">
       <div className="mt-28 flex justify-center w-full xl:w-auto">
@@ -25,7 +34,11 @@ export const About = () => {
               dia a dia da edificação.
             </p>
             <div className="py-4">
-              <MainButton responsiveWidth="w-full" width="w-72">
+              <MainButton
+                responsiveWidth="w-full"
+                width="w-72"
+                onClick={() => setIsModalOpen(true)}
+              >
                 Agende uma demonstração
               </MainButton>
             </div>
@@ -43,12 +56,19 @@ export const About = () => {
               borderColor="border-white"
               color="text-white"
               height="h-12"
+              onClick={() => setIsModalOpen(true)}
             >
-              <Image src={icons.whatsapp} alt="" width={24} /> Fale conosco
+              <Image
+                src={icons.whatsapp}
+                alt=""
+                width={24}
+              />
+              Fale conosco
             </OutlineButton>
           </div>
         </div>
       </div>
+      {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );
 };

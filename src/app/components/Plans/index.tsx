@@ -1,11 +1,20 @@
+"use client";
+
 import { icons } from "@/assets/icons";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { IInfoCard, InfoCard } from "@/components/Cards/InfoCard";
 import detail from "@/assets/details/detail.svg";
 
 import Image from "next/image";
+import { HabllaForm } from "@/components/HabllaForm";
+import { useState } from "react";
 
 export const Plans = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   const cardInfo: IInfoCard[] = [
     {
       icon: icons.house,
@@ -83,12 +92,15 @@ export const Plans = () => {
           </p>
         </div>
         <div className="hidden xl:flex">
-          <MainButton>Agende uma demonstração</MainButton>
+          <MainButton onClick={() => setIsModalOpen(true)}>
+            Agende uma demonstração
+          </MainButton>
         </div>
       </div>
       <div className="hidden absolute bottom-0 right-0 lg:flex">
         <Image src={detail} alt="" />
       </div>
+      {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );
 };

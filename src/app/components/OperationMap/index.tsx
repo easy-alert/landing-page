@@ -1,11 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import { MainButton } from "@/components/Buttons/MainButton";
 import mapResponsive from "@/assets/mapResponsive.svg";
 import operationMap from "@/assets/onlyOperationMap.svg";
 import leftDetail from "@/assets/details/leftDetail.svg";
 import rightDetail from "@/assets/details/rightDetail.svg";
+import { useState } from "react";
+import { HabllaForm } from "@/components/HabllaForm";
 
 export const OperationMap = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section className="flex justify-center gap-20 xl:px-28 xl:pt-16 mt-56 relative">
       <Image
@@ -34,7 +44,9 @@ export const OperationMap = () => {
             </p>
           </div>
           <div className="hidden xl:flex">
-            <MainButton>Agende uma demonstração</MainButton>
+            <MainButton onClick={() => setIsModalOpen(true)}>
+              Agende uma demonstração
+            </MainButton>
           </div>
           <div className="flex flex-col gap-6 xl:hidden">
             <div>
@@ -48,6 +60,7 @@ export const OperationMap = () => {
           </div>
         </article>
       </div>
+      {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );
 };

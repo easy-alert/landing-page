@@ -1,8 +1,18 @@
+"use client";
+
 import { MainButton } from "@/components/Buttons/MainButton";
 import notebook from "@/assets/notebook.svg";
 import Image from "next/image";
+import { HabllaForm } from "@/components/HabllaForm";
+import { useState } from "react";
 
 export const Control = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <section className="flex flex-col justify-between mt-40 relative xl:flex-row">
       <article className="flex flex-col justify-center items-center w-width551 px-4 xl:pl-28">
@@ -20,7 +30,9 @@ export const Control = () => {
           </p>
         </div>
         <div className="hidden xl:flex">
-          <MainButton>Agende uma demonstração</MainButton>
+          <MainButton onClick={() => setIsModalOpen(true)}>
+            Agende uma demonstração
+          </MainButton>
         </div>
       </article>
       <article className="flex justify-end mt-16 ">
@@ -31,6 +43,7 @@ export const Control = () => {
           Agende uma demonstração
         </MainButton>
       </div>
+      {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );
 };
