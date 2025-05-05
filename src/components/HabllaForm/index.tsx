@@ -6,19 +6,19 @@ import Image from "next/image";
 import WhatsApp from "@/assets/whatsapp.svg";
 import Telephone from "@/assets/icons/telephone.svg";
 import Mail from "@/assets/icons/mail.svg";
+import x from "@/assets/icons/x.svg";
 
-export const HabllaForm = () => {
+type HabllaFormProps = {
+  onClose: () => void;
+};
+
+export const HabllaForm = ({ onClose }: HabllaFormProps) => {
   const [showPopup, setShowPopup] = useState(false);
-
   const [contactByWhatsapp, setContactByWhatsapp] = useState(false);
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [companyName, setCompanyName] = useState<string>("");
-
-  const handleModalClose = () => {
-    setShowPopup(false);
-  };
 
   const [errors, setErrors] = useState<{
     name?: string;
@@ -92,21 +92,15 @@ export const HabllaForm = () => {
     }
   };
 
-  const handleInfoClick = (contactType: string) => {
-    if (contactType === "telefone") {
-    }
-    if (contactType === "email") {
-    }
-  };
-
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg p-5 w-full max-w-2xl shadow-lg my-8 relative">
+        {/* Botão para fechar o modal */}
         <button
-          onClick={handleModalClose}
+          onClick={onClose}
           className="absolute top-2 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold"
         >
-          &times;
+          <Image src={x} alt="Fechar" width={20} height={20} />
         </button>
 
         <h2 className="text-xl font-bold text-center mb-4 text-easyAlertColor">
@@ -224,21 +218,13 @@ export const HabllaForm = () => {
               )}
 
               <label className="flex items-center gap-2 border border-gray-300 rounded p-2 text-sm cursor-pointer hover:shadow-md transition">
-                <input
-                  type="checkbox"
-                  className="accent-easyAlertColor"
-                  onClick={() => handleInfoClick("telefone")}
-                />
+                <input type="checkbox" className="accent-easyAlertColor" />
                 <Image src={Telephone} alt="Telefone" width={20} height={20} />
                 <span className="text-xs">Telefone</span>
               </label>
 
               <label className="flex items-center gap-2 border border-gray-300 rounded p-2 text-sm cursor-pointer hover:shadow-md transition">
-                <input
-                  type="checkbox"
-                  className="accent-easyAlertColor"
-                  onClick={() => handleInfoClick("email")}
-                />
+                <input type="checkbox" className="accent-easyAlertColor" />
                 <Image src={Mail} alt="E-mail" width={20} height={20} />
                 <span>E-mail</span>
               </label>
