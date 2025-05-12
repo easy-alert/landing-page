@@ -1,8 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { formApi } from "@/app/api/postForm/pipedriveApi";
+
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+
+import { formApi } from "@/app/api/postForm/pipedriveApi";
+
 import WhatsApp from "@/assets/whatsapp.svg";
 import Telephone from "@/assets/icons/telephone.svg";
 import Mail from "@/assets/icons/mail.svg";
@@ -13,12 +17,18 @@ type HabllaFormProps = {
 };
 
 export const HabllaForm = ({ onClose }: HabllaFormProps) => {
-  const [showPopup, setShowPopup] = useState(false);
-  const [contactByWhatsapp, setContactByWhatsapp] = useState(false);
+  const searchParams = useSearchParams();
+
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [companyName, setCompanyName] = useState<string>("");
+
+  const [contactByWhatsapp, setContactByWhatsapp] = useState(false);
+  const [contactByPhone, setContactByPhone] = useState(false);
+  const [contactByEmail, setContactByEmail] = useState(false);
+
+  const [showPopup, setShowPopup] = useState(false);
 
   const [errors, setErrors] = useState<{
     name?: string;
@@ -26,6 +36,26 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
     phone?: string;
     companyName?: string;
   }>({});
+
+  const gad_source = searchParams.get("gad_source");
+  const gad_campaignid = searchParams.get("gad_campaignid");
+  const gbraid = searchParams.get("gbraid");
+  const gclid = searchParams.get("gclid");
+  const utm_source = searchParams.get("utm_source");
+  const utm_medium = searchParams.get("utm_medium");
+  const utm_campaign = searchParams.get("utm_campaign");
+  const utm_term = searchParams.get("utm_term");
+  const fbclid = searchParams.get("fbclid");
+
+  const handleClearValues = () => {
+    setName("");
+    setEmail("");
+    setPhone("");
+    setCompanyName("");
+    setContactByWhatsapp(false);
+    setContactByPhone(false);
+    setContactByEmail(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,16 +96,23 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
       phone,
       companyName,
       contactByWhatsapp,
+      contactByPhone,
+      contactByEmail,
+      gad_source,
+      gad_campaignid,
+      gbraid,
+      gclid,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_term,
+      fbclid,
     };
 
     try {
       await formApi.post("", formData);
 
-      setName("");
-      setEmail("");
-      setPhone("");
-      setCompanyName("");
-      setContactByWhatsapp(false);
+      handleClearValues();
       setErrors({});
 
       if (contactByWhatsapp) {
@@ -218,13 +255,23 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
               )}
 
               <label className="flex items-center gap-2 border border-gray-300 rounded p-2 text-sm cursor-pointer hover:shadow-md transition">
-                <input type="checkbox" className="accent-easyAlertColor" />
+                <input
+                  type="checkbox"
+                  className="accent-easyAlertColor"
+                  checked={contactByPhone}
+                  onChange={() => setContactByPhone(!contactByPhone)}
+                />
                 <Image src={Telephone} alt="Telefone" width={20} height={20} />
                 <span className="text-xs">Telefone</span>
               </label>
 
               <label className="flex items-center gap-2 border border-gray-300 rounded p-2 text-sm cursor-pointer hover:shadow-md transition">
-                <input type="checkbox" className="accent-easyAlertColor" />
+                <input
+                  type="checkbox"
+                  className="accent-easyAlertColor"
+                  checked={contactByEmail}
+                  onChange={() => setContactByEmail(!contactByEmail)}
+                />
                 <Image src={Mail} alt="E-mail" width={20} height={20} />
                 <span>E-mail</span>
               </label>
