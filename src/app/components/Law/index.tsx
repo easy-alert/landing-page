@@ -1,3 +1,5 @@
+"use client";
+
 import { MainButton } from "@/components/Buttons/MainButton";
 import { LawCard } from "@/components/Cards/LawCard";
 import Image from "next/image";
@@ -5,8 +7,15 @@ import leftDetail from "@/assets/details/lawTopLeftDetail.svg";
 import rightDetail from "@/assets/details/lawTopRightDetail.svg";
 import bottomRightDetail from "@/assets/details/lawBottomRightDetail.svg";
 import abntImage from "@/assets/abntImage.svg";
+import { useState } from "react";
+import { HabllaForm } from "@/components/HabllaForm";
 
 export const Law = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <section
       id="Normas"
@@ -44,7 +53,9 @@ export const Law = () => {
           </p>
         </div>
         <div className="hidden xl:flex">
-          <MainButton>Agende uma demonstração</MainButton>
+          <MainButton onClick={() => setIsModalOpen(true)}>
+            Agende uma demonstração
+          </MainButton>
         </div>
       </article>
       <div className="flex flex-col gap-6 relative">
@@ -69,6 +80,7 @@ export const Law = () => {
           Agende uma demonstração
         </MainButton>
       </div>
+      {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );
 };
