@@ -123,6 +123,8 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
 
         window.open(whatsappUrl, "_blank");
       }
+
+      window.dataLayer.push({ event: "novo_lead" });
     } catch (error) {
       console.error("Erro no envio:", error);
       alert("Ocorreu um erro ao enviar o formulário.");
