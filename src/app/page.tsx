@@ -1,4 +1,4 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import Script from "next/script";
 
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
@@ -68,7 +68,6 @@ export const metadata: Metadata = {
     "Tecnologia",
     "Inovação",
   ],
-
 };
 
 const App = () => {
@@ -87,6 +86,13 @@ const App = () => {
             })(window,document,'script','dataLayer','GTM-PRS45NCB');
           `,
         }}
+      />
+      
+      {/* Habbla Script */}
+      <Script
+        id="habbla"
+        src="https://htm.hablla.io/api/tag-manager/loader/67a4c388c22cd08fa96c1230"
+        strategy="afterInteractive"
       />
 
       {/* Conteúdo da página */}
