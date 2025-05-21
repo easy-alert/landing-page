@@ -1,12 +1,26 @@
 "use client";
 
 import { useState } from "react";
+
 import Image from "next/image";
+import Link from "next/link";
+
 import logo from "@/assets/easyAlertLogo.svg";
 import { icons } from "@/assets/icons";
-import Link from "next/link";
+
 import { MainButton } from "../Buttons/MainButton";
 import { OutlineButton } from "../Buttons/OutlineButton";
+
+const headerNavItems = [
+  { name: "Sobre", href: "/#Sobre" },
+  { name: "Funcionalidades", href: "/#Funcionalidades" },
+  { name: "Depoimentos", href: "/#Depoimentos" },
+  { name: "Normas", href: "/#Normas" },
+  {
+    name: "Politica de Privacidade",
+    href: "/politica-de-privacidade-de-dados",
+  },
+];
 
 export const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -53,18 +67,16 @@ export const MobileHeader = () => {
           </div>
 
           <ul className="w-full max-w-xs space-y-4 text-lg f text-center">
-            {["Sobre", "Funcionalidades", "Depoimentos", "Normas"].map(
-              (item) => (
-                <li
-                  key={item}
-                  className="py-4 border-b hover:bg-gray-100 rounded-lg transition cursor-pointer text-easyAlertColor"
-                >
-                  <Link href={`#${item}`} onClick={() => setIsOpen(false)}>
-                    {item}
-                  </Link>
-                </li>
-              )
-            )}
+            {headerNavItems.map((item) => (
+              <li
+                key={item.name}
+                className="py-4 border-b hover:bg-gray-100 rounded-lg transition cursor-pointer text-easyAlertColor"
+              >
+                <Link href={item.href} onClick={() => setIsOpen(false)}>
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       )}

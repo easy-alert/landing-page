@@ -1,16 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import LogoFooter from "../../../assets/logoFooter.svg";
-import Instagram from "../../../assets/instagram.svg";
-import Facebook from "../../../assets/facebook.svg";
-import YoutubeFilled from "../../../assets/youtubeFilled.svg";
-import ArrowUp from "../../../assets/arrowUp.svg";
-import WhatsApp from "../../../assets/whatsapp.svg";
-import { MainButton } from "@/components/Buttons/MainButton";
 import { useEffect, useState } from "react";
+
+import Image from "next/image";
 import Link from "next/link";
+
+import { MainButton } from "@/components/Buttons/MainButton";
 import { HabllaForm } from "@/components/HabllaForm";
+
+import LogoFooter from "../../assets/logoFooter.svg";
+import Instagram from "../../assets/instagram.svg";
+import Facebook from "../../assets/facebook.svg";
+import YoutubeFilled from "../../assets/youtubeFilled.svg";
+import ArrowUp from "../../assets/arrowUp.svg";
+import WhatsApp from "../../assets/whatsapp.svg";
 
 export const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +34,7 @@ export const Footer = () => {
   return (
     <footer
       id="Rodape"
-      className="flex flex-col bg-easyAlertColor py-8 px-10 mt-28 gap-6 xl:h-[475px]"
+      className="flex flex-col bg-easyAlertColor py-8 px-10 gap-6 xl:h-[475px]"
     >
       <div className="flex flex-col gap-6 justify-between xl:items-center xl:flex-row">
         <Image src={LogoFooter} alt="EasyAlert logo" className="self-center" />

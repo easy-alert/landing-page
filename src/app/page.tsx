@@ -1,8 +1,4 @@
-import { Metadata } from "next";
-import Script from "next/script";
-
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
-import { TrackingTagsProvider } from "@/components/TrackingTagsProvider";
 
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
@@ -46,63 +42,11 @@ import { PlatformEasy } from "./components/PlatformEasy";
 import { OperationMap } from "./components/OperationMap";
 import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
 import { About } from "./components/About";
-import { Suspense } from "react";
-
-export const metadata: Metadata = {
-  title: "Easy Alert",
-  applicationName: process.env.npm_package_name,
-  description: "Easy Alert - Plataforma de Gestão de Manutenção e Segurança",
-  other: {
-    appName: process.env.npm_package_name || "new-lp",
-    appVersion: process.env.npm_package_version || "1.0.0",
-    buildTime: new Date().toISOString(),
-  },
-  icons: {
-    icon: "/favicon.ico",
-  },
-  keywords: [
-    "Easy Alert",
-    "Plataforma de Gestão de Manutenção e Segurança",
-    "Gestão de Manutenção",
-    "Segurança",
-    "Tecnologia",
-    "Inovação",
-  ],
-};
 
 const App = () => {
   return (
     <>
-      {/* Google Tag Manager Script */}
-      <Script
-        id="google-tag-manager"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-PRS45NCB');
-          `,
-        }}
-      />
-
-      {/* Habbla Script */}
-      <Script
-        id="habbla"
-        src="https://htm.hablla.io/api/tag-manager/loader/67a4c388c22cd08fa96c1230"
-        strategy="afterInteractive"
-      />
-
-      <Suspense fallback={null}>
-        <TrackingTagsProvider />
-      </Suspense>
-
-      {/* Google Tag Manager No Script */}
-
       {/* Conteúdo da página */}
       <About />
       <section className="w-full mt-14">
@@ -149,6 +93,7 @@ const App = () => {
         <h4 className="text-caption p-5 pb-10 font-helveticaNeueMedium uppercase text-center">
           apoiadores prêmios e investidores
         </h4>
+
         <AutoLoopCarousel
           carouselItems={[
             awards_1,
@@ -163,7 +108,6 @@ const App = () => {
       </section>
       <Testimonials />
       <Contact />
-      <Footer />
     </>
   );
 };
