@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
+import { TrackingTagsProvider } from '@/components/TrackingTagsProvider';
 
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
@@ -87,13 +88,15 @@ const App = () => {
           `,
         }}
       />
-      
+
       {/* Habbla Script */}
       <Script
         id="habbla"
         src="https://htm.hablla.io/api/tag-manager/loader/67a4c388c22cd08fa96c1230"
         strategy="afterInteractive"
       />
+
+      <TrackingTagsProvider />
 
       {/* Conteúdo da página */}
       <About />
