@@ -62,7 +62,7 @@ export const useGetTrackingTags = (
     });
 
     setTags(collected);
-  }, []);
+  }, [storageType]);
 
   return tags;
 };
