@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
+import { TrackingTagsProvider } from "@/components/TrackingTagsProvider";
 
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
@@ -47,6 +48,7 @@ import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { About } from "./components/About";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Easy Alert",
@@ -87,13 +89,19 @@ const App = () => {
           `,
         }}
       />
-      
+
       {/* Habbla Script */}
       <Script
         id="habbla"
         src="https://htm.hablla.io/api/tag-manager/loader/67a4c388c22cd08fa96c1230"
         strategy="afterInteractive"
       />
+
+      <Suspense fallback={null}>
+        <TrackingTagsProvider />
+      </Suspense>
+
+      {/* Google Tag Manager No Script */}
 
       {/* Conteúdo da página */}
       <About />

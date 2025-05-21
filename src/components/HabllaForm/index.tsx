@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 
-import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+
+import { useGetTrackingTags } from "@/hooks/useTrackingTags";
 
 import { formApi } from "@/app/api/postForm/pipedriveApi";
 
@@ -17,8 +18,7 @@ type HabllaFormProps = {
 };
 
 export const HabllaForm = ({ onClose }: HabllaFormProps) => {
-  const searchParams = useSearchParams();
-
+  const tags = useGetTrackingTags("sessionStorage");
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -36,16 +36,6 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
     phone?: string;
     companyName?: string;
   }>({});
-
-  const gad_source = searchParams.get("gad_source");
-  const gad_campaignid = searchParams.get("gad_campaignid");
-  const gbraid = searchParams.get("gbraid");
-  const gclid = searchParams.get("gclid");
-  const utm_source = searchParams.get("utm_source");
-  const utm_medium = searchParams.get("utm_medium");
-  const utm_campaign = searchParams.get("utm_campaign");
-  const utm_term = searchParams.get("utm_term");
-  const fbclid = searchParams.get("fbclid");
 
   const handleClearValues = () => {
     setName("");
@@ -98,15 +88,15 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
       contactByWhatsapp,
       contactByPhone,
       contactByEmail,
-      gad_source,
-      gad_campaignid,
-      gbraid,
-      gclid,
-      utm_source,
-      utm_medium,
-      utm_campaign,
-      utm_term,
-      fbclid,
+      gad_source: tags.gad_source || "",
+      gad_campaignid: tags.gad_campaignid || "",
+      gbraid: tags.gbraid || "",
+      gclid: tags.gclid || "",
+      utm_source: tags.utm_source || "",
+      utm_medium: tags.utm_medium || "",
+      utm_campaign: tags.utm_campaign || "",
+      utm_term: tags.utm_term || "",
+      fbclid: tags.fbclid || "",
     };
 
     try {
