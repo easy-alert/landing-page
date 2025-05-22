@@ -80,14 +80,14 @@ const PrivacyPolicy = () => {
             </p>
 
             <div className="bg-blue-50 p-4 rounded-lg">
-              <p className="font-medium">Encarregado: Hyan Dias Tavares</p>
+              <p className="font-medium">Encarregado: Fernando Zomer</p>
               <p>
                 Contato:{" "}
                 <a
-                  href="mailto:privacidade@easyalert.com.br"
+                  href="mailto:contanto@easyalert.com.br"
                   className="text-blue-600"
                 >
-                  privacidade@easyalert.com.br
+                  contanto@easyalert.com.br
                 </a>
               </p>
             </div>
@@ -546,7 +546,7 @@ const PrivacyPolicy = () => {
 
             <p className="mb-2">
               O seu requerimento poderá ser feito gratuitamente através do
-              e-mail privacidade@easyalert.com.br. Analisaremos seu pedido e o
+              e-mail contanto@easyalert.com.br. Analisaremos seu pedido e o
               atenderemos com a maior brevidade possível, considerando os prazos
               e os termos previstos na legislação aplicável. Caso não seja
               possível atender imediatamente a sua requisição, indicaremos as
@@ -774,7 +774,7 @@ const PrivacyPolicy = () => {
                 NUNCA IRÁ SOLICITAR SEUS DADOS FINANCEIROS ATRAVÉS DE E-MAIL OU
                 CONTATO TELEFÔNICO NÃO OFICIAL. NO CASO DE QUALQUER OUTRA
                 ATITUDE SUSPEITA, ENCAMINHE SUA DÚVIDA OU ALERTA POR E-MAIL PARA
-                privacidade@easyalert.com.br
+                contanto@easyalert.com.br
               </strong>
             </p>
           </section>
@@ -1048,7 +1048,7 @@ const PrivacyPolicy = () => {
               Ao utilizar nosso Site, você concorda com os termos desta
               Política. Dúvidas?{" "}
               <a
-                href="mailto:privacidade@easyalert.com.br"
+                href="mailto:contanto@easyalert.com.br"
                 className="text-blue-600"
               >
                 Entre em contato
