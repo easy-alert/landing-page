@@ -33,7 +33,6 @@ const Awards = dynamic(
   () => import("./components/Awards").then((mod) => mod.Awards),
   { ssr: false }
 );
-
 const Testimonials = dynamic(
   () => import("./components/Testimonials").then((mod) => mod.Testimonials),
   { ssr: false }
