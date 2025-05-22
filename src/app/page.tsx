@@ -34,21 +34,42 @@ import awards_5 from "@/assets/suporters/awards_5.svg";
 import awards_6 from "@/assets/suporters/awards_6.svg";
 import awards_7 from "@/assets/suporters/awards_7.svg";
 
-import { Plans } from "./components/Plans";
-import { Control } from "./components/Control";
-import { InfoReceivable } from "./components/InfoReceivable";
-import { Law } from "./components/Law";
-import { PlatformEasy } from "./components/PlatformEasy";
-import { OperationMap } from "./components/OperationMap";
-import { Contact } from "./components/Contact";
 import { About } from "./components/About";
 
 const AutoLoopCarousel = dynamic(
   () => import("@/components/Carousels/AutoLoopCarousel"),
   { ssr: false }
 );
+const Plans = dynamic(
+  () => import("./components/Plans").then((mod) => mod.Plans),
+  { ssr: false }
+);
+const Control = dynamic(
+  () => import("./components/Control").then((mod) => mod.Control),
+  { ssr: false }
+);
+const InfoReceivable = dynamic(
+  () => import("./components/InfoReceivable").then((mod) => mod.InfoReceivable),
+  { ssr: false }
+);
+const OperationMap = dynamic(
+  () => import("./components/OperationMap").then((mod) => mod.OperationMap),
+  { ssr: false }
+);
+const PlatformEasy = dynamic(
+  () => import("./components/PlatformEasy").then((mod) => mod.PlatformEasy),
+  { ssr: false }
+);
+const Law = dynamic(() => import("./components/Law").then((mod) => mod.Law), {
+  ssr: false,
+});
+
 const Testimonials = dynamic(
   () => import("./components/Testimonials").then((mod) => mod.Testimonials),
+  { ssr: false }
+);
+const Contact = dynamic(
+  () => import("./components/Contact").then((mod) => mod.Contact),
   { ssr: false }
 );
 
@@ -57,6 +78,7 @@ const App = () => {
     <>
       {/* Conteúdo da página */}
       <About />
+
       <section className="w-full mt-14">
         <h4 className="text-caption p-5 pb-10 font-helveticaNeueMedium uppercase text-center">
           Parceiros
@@ -92,6 +114,7 @@ const App = () => {
           ]}
         />
       </section>
+
       <Plans />
       <Control />
       <InfoReceivable />
