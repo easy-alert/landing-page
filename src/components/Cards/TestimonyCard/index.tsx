@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@/components/CustomImage";
 
 interface TestimonyCardProps {
   name: string;
@@ -17,10 +17,15 @@ export const TestimonyCard = ({
     <div className="flex flex-col items-start gap-4 shadow-shadowCardLessSpread rounded-lg p-8 bg-white">
       <div className="flex gap-6">
         {image ? (
-          <Image src={image} alt="" className="w-8 h-8 rounded-full" />
+          <CustomImage
+            src={image}
+            alt="Imagem de testemunha"
+            className="w-8 h-8 rounded-full"
+          />
         ) : (
           <div className="bg-gray-200 w-8 h-8 rounded-full" />
         )}
+
         <div>
           <h3 className="font-helveticaNeue text-2xl">{name}</h3>
           <h4 className="text-caption text-sm font-helveticaNeueMedium uppercase">
@@ -28,6 +33,7 @@ export const TestimonyCard = ({
           </h4>
         </div>
       </div>
+
       <article>
         <p className="text-darkGray text-sectionParagraph">{description}</p>
       </article>

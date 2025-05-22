@@ -1,8 +1,10 @@
 "use client";
 
-import * as React from "react";
 import { useKeenSlider } from "keen-slider/react";
-import Image, { StaticImageData } from "next/image";
+
+import { StaticImageData } from "next/image";
+
+import CustomImage from "@/components/CustomImage";
 
 interface AutoLoopCarouselProps {
   carouselItems: string[] | StaticImageData[];
@@ -27,12 +29,15 @@ export default function AutoLoopCarousel({
         },
       },
     },
+
     created(s) {
       s.moveToIdx(5, true, animation);
     },
+
     updated(s) {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
+
     animationEnded(s) {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
@@ -45,9 +50,9 @@ export default function AutoLoopCarousel({
           key={index}
           className="keen-slider__slide place-content-center grid"
         >
-          <Image
+          <CustomImage
             src={item}
-            alt=""
+            alt={`Foto do carrossel ${index}`}
             style={{ height: "100px", width: "auto", objectFit: "contain" }}
           />
         </div>

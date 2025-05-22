@@ -2,13 +2,13 @@ import { Suspense } from "react";
 
 import Script from "next/script";
 import localFont from "next/font/local";
+import dynamic from "next/dynamic";
 
 import type { Metadata } from "next";
 
 import { TrackingTagsProvider } from "@/components/TrackingTagsProvider";
 import { Header } from "@/components/Header";
 import { MobileHeader } from "@/components/MobileHeader";
-import { Footer } from "@/components/Footer";
 
 import "./globals.css";
 
@@ -51,6 +51,11 @@ export const metadata: Metadata = {
     "Inovação",
   ],
 };
+
+const Footer = dynamic(
+  () => import("@/components/Footer").then((mod) => mod.Footer),
+  { ssr: false }
+);
 
 export default function RootLayout({
   children,
