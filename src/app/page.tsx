@@ -1,4 +1,4 @@
-import AutoLoopCarousel from "@/components/Carousels/AutoLoopCarousel";
+import dynamic from "next/dynamic";
 
 import partners_1 from "@/assets/partners/partners_1.svg";
 import partners_2 from "@/assets/partners/partners_2.svg";
@@ -40,9 +40,17 @@ import { InfoReceivable } from "./components/InfoReceivable";
 import { Law } from "./components/Law";
 import { PlatformEasy } from "./components/PlatformEasy";
 import { OperationMap } from "./components/OperationMap";
-import { Testimonials } from "./components/Testimonials";
 import { Contact } from "./components/Contact";
 import { About } from "./components/About";
+
+const AutoLoopCarousel = dynamic(
+  () => import("@/components/Carousels/AutoLoopCarousel"),
+  { ssr: false }
+);
+const Testimonials = dynamic(
+  () => import("./components/Testimonials").then((mod) => mod.Testimonials),
+  { ssr: false }
+);
 
 const App = () => {
   return (
@@ -53,6 +61,7 @@ const App = () => {
         <h4 className="text-caption p-5 pb-10 font-helveticaNeueMedium uppercase text-center">
           Parceiros
         </h4>
+
         <AutoLoopCarousel
           carouselItems={[
             partners_1,
