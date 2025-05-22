@@ -1,13 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import person from "@/assets/person.svg";
-import mouseSlip from "@/assets/mouseSlip.svg";
+import { useState } from "react";
+
+import CustomImage from "@/components/CustomImage";
 import { MainButton } from "@/components/Buttons/MainButton";
 import { OutlineButton } from "@/components/Buttons/OutlineButton";
-import { icons } from "@/assets/icons";
-import { useState } from "react";
 import { HabllaForm } from "@/components/HabllaForm";
+
+import { icons } from "@/assets/icons";
+import person from "@/assets/person.svg";
+import mouseSlip from "@/assets/mouseSlip.svg";
 
 export const About = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,6 +17,7 @@ export const About = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   return (
     <section id="Sobre" className="flex justify-between relative">
       <div className="mt-28 flex justify-center w-full xl:w-auto">
@@ -43,13 +46,31 @@ export const About = () => {
               </MainButton>
             </div>
           </div>
+
           <div className="hidden pl-28 mt-20 xl:flex">
-            <Image src={mouseSlip} alt="downScroll" />
+            <CustomImage
+              src={mouseSlip}
+              alt="Role o mouse para baixo"
+              priority
+              width={40}
+              height={40}
+            />
           </div>
         </div>
       </div>
+      
       <div>
-        <Image src={person} alt="" className="hidden xl:flex" />
+        <CustomImage
+          src={person}
+          alt="Pessoa engenheira"
+          className="hidden xl:flex"
+          priority
+          style={{
+            width: "100%",
+            height: "auto",
+          }}
+        />
+
         <div className="w-full hidden justify-end  xl:flex">
           <div className="w-full h-28 bg-lightBlack rounded-tl-xl rounded-bl-xl flex items-center pl-6">
             <OutlineButton
@@ -58,16 +79,19 @@ export const About = () => {
               height="h-12"
               onClick={() => setIsModalOpen(true)}
             >
-              <Image
+              <CustomImage
                 src={icons.whatsapp}
-                alt=""
+                alt="Ícone do WhatsApp"
+                priority
                 width={24}
+                height={24}
               />
               Fale conosco
             </OutlineButton>
           </div>
         </div>
       </div>
+
       {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );

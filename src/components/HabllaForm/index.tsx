@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-import { useSearchParams } from "next/navigation";
-import Image from "next/image";
+import { useGetTrackingTags } from "@/hooks/useTrackingTags";
 
 import { formApi } from "@/app/api/postForm/pipedriveApi";
 
@@ -12,13 +11,14 @@ import Telephone from "@/assets/icons/telephone.svg";
 import Mail from "@/assets/icons/mail.svg";
 import x from "@/assets/icons/x.svg";
 
+import CustomImage from "../CustomImage";
+
 type HabllaFormProps = {
   onClose: () => void;
 };
 
 export const HabllaForm = ({ onClose }: HabllaFormProps) => {
-  const searchParams = useSearchParams();
-
+  const tags = useGetTrackingTags("sessionStorage");
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
@@ -36,16 +36,6 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
     phone?: string;
     companyName?: string;
   }>({});
-
-  const gad_source = searchParams.get("gad_source");
-  const gad_campaignid = searchParams.get("gad_campaignid");
-  const gbraid = searchParams.get("gbraid");
-  const gclid = searchParams.get("gclid");
-  const utm_source = searchParams.get("utm_source");
-  const utm_medium = searchParams.get("utm_medium");
-  const utm_campaign = searchParams.get("utm_campaign");
-  const utm_term = searchParams.get("utm_term");
-  const fbclid = searchParams.get("fbclid");
 
   const handleClearValues = () => {
     setName("");
@@ -98,15 +88,15 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
       contactByWhatsapp,
       contactByPhone,
       contactByEmail,
-      gad_source,
-      gad_campaignid,
-      gbraid,
-      gclid,
-      utm_source,
-      utm_medium,
-      utm_campaign,
-      utm_term,
-      fbclid,
+      gad_source: tags.gad_source || "",
+      gad_campaignid: tags.gad_campaignid || "",
+      gbraid: tags.gbraid || "",
+      gclid: tags.gclid || "",
+      utm_source: tags.utm_source || "",
+      utm_medium: tags.utm_medium || "",
+      utm_campaign: tags.utm_campaign || "",
+      utm_term: tags.utm_term || "",
+      fbclid: tags.fbclid || "",
     };
 
     try {
@@ -139,7 +129,7 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
           onClick={onClose}
           className="absolute top-2 right-4 text-gray-500 hover:text-gray-800 text-xl font-bold"
         >
-          <Image src={x} alt="Fechar" width={20} height={20} />
+          <CustomImage src={x} alt="Fechar" width={20} height={20} />
         </button>
 
         <h2 className="text-xl font-bold text-center mb-4 text-easyAlertColor">
@@ -246,7 +236,12 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
                   checked={contactByWhatsapp}
                   onChange={() => setContactByWhatsapp(!contactByWhatsapp)}
                 />
-                <Image src={WhatsApp} alt="WhatsApp" width={20} height={20} />
+                <CustomImage
+                  src={WhatsApp}
+                  alt="WhatsApp"
+                  width={20}
+                  height={20}
+                />
                 <span className="text-xs">WhatsApp</span>
               </label>
 
@@ -263,7 +258,12 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
                   checked={contactByPhone}
                   onChange={() => setContactByPhone(!contactByPhone)}
                 />
-                <Image src={Telephone} alt="Telefone" width={20} height={20} />
+                <CustomImage
+                  src={Telephone}
+                  alt="Telefone"
+                  width={20}
+                  height={20}
+                />
                 <span className="text-xs">Telefone</span>
               </label>
 
@@ -274,7 +274,7 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
                   checked={contactByEmail}
                   onChange={() => setContactByEmail(!contactByEmail)}
                 />
-                <Image src={Mail} alt="E-mail" width={20} height={20} />
+                <CustomImage src={Mail} alt="E-mail" width={20} height={20} />
                 <span>E-mail</span>
               </label>
             </div>

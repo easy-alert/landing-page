@@ -1,32 +1,29 @@
-// import Image from "next/image";
-// import youtube from "../../../assets/youtube.svg";
+import { LazyYoutube } from "@/components/LazyYoutube";
 
 interface VideoCardProps {
   title: string;
   position: string;
   description: string;
   videoRight?: boolean;
-  src: string;
+  videoId: string;
 }
 
 export const VideoCard = ({
-  description,
-  position,
   title,
+  description,
+  videoId,
+  position,
   videoRight,
-  src,
 }: VideoCardProps) => {
   return (
     <div className="flex flex-1 items-center">
       <div className="flex items-center gap-6 flex-col xl:flex-row">
-        <div className="flex items-center justify-center rounded-md shadow-shadowCard xl:hidden ">
-          <iframe src={src} width={498} height={280} />
-        </div>
         {!videoRight && (
           <div className="items-center justify-center rounded-md hidden shadow-shadowCard xl:flex">
-            <iframe src={src} width={498} height={280} />
+            <LazyYoutube videoId={videoId} width={560} height={315} />
           </div>
         )}
+
         <article>
           <div className="flex flex-col gap-2">
             <h3 className="font-helveticaNeue text-2xl">{title}</h3>
@@ -38,9 +35,10 @@ export const VideoCard = ({
             </p>
           </div>
         </article>
+
         {videoRight && (
           <div className="items-center justify-center rounded-md ml-6 hidden shadow-shadowCard xl:flex">
-            <iframe src={src} width={498} height={280} />
+            <LazyYoutube videoId={videoId} width={560} height={315} />
           </div>
         )}
       </div>
