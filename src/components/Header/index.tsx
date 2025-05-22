@@ -4,24 +4,16 @@ import { useState } from "react";
 
 import Link from "next/link";
 
-import easyAlertLogo from "@/assets/easyAlertLogo.svg";
+import { navItems } from '@/utils/navItems';
+
 import { icons } from "@/assets/icons";
+import easyAlertLogo from "@/assets/easyAlertLogo.svg";
 
 import { HabllaForm } from "../HabllaForm";
 import { MainButton } from "../Buttons/MainButton";
 import { OutlineButton } from "../Buttons/OutlineButton";
 import CustomImage from "../CustomImage";
 
-const headerNavItems = [
-  { name: "Sobre", href: "/#Sobre" },
-  { name: "Funcionalidades", href: "/#Funcionalidades" },
-  { name: "Depoimentos", href: "/#Depoimentos" },
-  { name: "Normas", href: "/#Normas" },
-  {
-    name: "Politica de Privacidade",
-    href: "/politica-de-privacidade-de-dados",
-  },
-];
 
 export const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +30,7 @@ export const Header = () => {
 
       <nav className="text-easyAlertColor">
         <ul className="flex space-x-8">
-          {headerNavItems.map((item) => (
+          {navItems.map((item) => (
             <li
               key={item.name}
               className="transition-transform hover:scale-105"

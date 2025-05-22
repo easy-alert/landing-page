@@ -4,23 +4,16 @@ import { useState } from "react";
 
 import Link from "next/link";
 
-import logo from "@/assets/easyAlertLogo.svg";
+import { navItems } from '@/utils/navItems';
+
 import { icons } from "@/assets/icons";
+import logo from "@/assets/easyAlertLogo.svg";
 
 import { MainButton } from "../Buttons/MainButton";
 import { OutlineButton } from "../Buttons/OutlineButton";
 import CustomImage from "../CustomImage";
 
-const headerNavItems = [
-  { name: "Sobre", href: "/#Sobre" },
-  { name: "Funcionalidades", href: "/#Funcionalidades" },
-  { name: "Depoimentos", href: "/#Depoimentos" },
-  { name: "Normas", href: "/#Normas" },
-  {
-    name: "Politica de Privacidade",
-    href: "/politica-de-privacidade-de-dados",
-  },
-];
+
 
 export const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -73,7 +66,7 @@ export const MobileHeader = () => {
           </div>
 
           <ul className="w-full max-w-xs space-y-4 text-lg f text-center">
-            {headerNavItems.map((item) => (
+            {navItems.map((item) => (
               <li
                 key={item.name}
                 className="py-4 border-b hover:bg-gray-100 rounded-lg transition cursor-pointer text-easyAlertColor"
