@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import easyAlertLogo from "@/assets/easyAlertLogo.svg";
@@ -11,13 +10,17 @@ import { icons } from "@/assets/icons";
 import { HabllaForm } from "../HabllaForm";
 import { MainButton } from "../Buttons/MainButton";
 import { OutlineButton } from "../Buttons/OutlineButton";
+import CustomImage from "../CustomImage";
 
 const headerNavItems = [
   { name: "Sobre", href: "/#Sobre" },
   { name: "Funcionalidades", href: "/#Funcionalidades" },
   { name: "Depoimentos", href: "/#Depoimentos" },
   { name: "Normas", href: "/#Normas" },
-  { name: "Politica de Privacidade", href: "/politica-de-privacidade-de-dados" },
+  {
+    name: "Politica de Privacidade",
+    href: "/politica-de-privacidade-de-dados",
+  },
 ];
 
 export const Header = () => {
@@ -30,7 +33,7 @@ export const Header = () => {
   return (
     <header className="hidden h-32 bg-headerBackground items-center justify-between gap-20  xl:flex lg:gap-6 lg:px-28">
       <Link href="/">
-        <Image src={easyAlertLogo} alt="logo" />
+        <CustomImage src={easyAlertLogo} alt="Easy Alert logo" />
       </Link>
 
       <nav className="text-easyAlertColor">
@@ -57,7 +60,7 @@ export const Header = () => {
             window.open("https://company.easyalert.com.br/login", "_blank")
           }
         >
-          <Image src={icons.user} alt="" /> Login
+          <CustomImage src={icons.user} alt="Login" /> Login
         </OutlineButton>
       </div>
 

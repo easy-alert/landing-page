@@ -1,6 +1,8 @@
+import CustomImage from "@/components/CustomImage";
+
 import { MainButton } from "@/components/Buttons/MainButton";
+
 import phoneQRCodeResponsive from "../../../assets/phoneQRCodeResponsive.svg";
-import Image from "next/image";
 
 export const PlatformEasy = () => {
   return (
@@ -9,19 +11,23 @@ export const PlatformEasy = () => {
         <h4 className="uppercase text-caption text-white font-helveticaNeueMedium text-lightBlack">
           Sempre presente
         </h4>
+
         <h2 className="text-title">Todos por dentro</h2>
+
         <p className="leading-7">
           O acompanhamento das manutenções, acesso à documentos, contatos dos
           colaboradores e abertura de chamado pode ser realizado pelos
           moradores, através de um QR-Code gerado diretamente pela plataforma e
           disponibilizado em áreas comuns da edificação.
         </p>
+
         <div>
           <MainButton bgColor="bg-white" color="text-easyAlertColor font-bold">
             Conheça a plataforma Easy Alert
           </MainButton>
         </div>
-        <Image
+
+        <CustomImage
           src={phoneQRCodeResponsive}
           alt="Celular com o aplicativo EasyAlert"
           className="flex xl:hidden"

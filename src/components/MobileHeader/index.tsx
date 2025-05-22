@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import logo from "@/assets/easyAlertLogo.svg";
@@ -10,6 +9,7 @@ import { icons } from "@/assets/icons";
 
 import { MainButton } from "../Buttons/MainButton";
 import { OutlineButton } from "../Buttons/OutlineButton";
+import CustomImage from "../CustomImage";
 
 const headerNavItems = [
   { name: "Sobre", href: "/#Sobre" },
@@ -31,12 +31,12 @@ export const MobileHeader = () => {
 
   return (
     <header className="flex bg-headerBackground w-full justify-between items-center px-4 py-3 xl:hidden">
-      <Image src={logo} alt="logo easy alert" />
+      <CustomImage src={logo} alt="Easy Alert logo" />
 
       <button onClick={handleMenuClick} className="p-3 cursor-pointer">
-        <Image
+        <CustomImage
           src={isOpen ? icons.x : icons.menuHamburguer}
-          alt={isOpen ? "fechar menu" : "menu hamburguer"}
+          alt={isOpen ? "Fechar menu" : "Menu hamburguer"}
           height={32}
           width={32}
         />
@@ -44,12 +44,18 @@ export const MobileHeader = () => {
 
       {isOpen && (
         <nav className="fixed inset-0 bg-[#f9f9f9] z-50 flex flex-col items-center justify-center space-y-8  transition-opacity duration-300 ease-in-out shadow-lg">
-          <Image src={logo} alt="logo easy alert" />
+          <CustomImage src={logo} alt="Easy Alert logo" />
+
           <button
             onClick={handleMenuClick}
             className="absolute top-0 right-6 p-3 cursor-pointer"
           >
-            <Image src={icons.x} alt="fechar menu" height={32} width={32} />
+            <CustomImage
+              src={icons.x}
+              alt="Fechar menu"
+              height={32}
+              width={32}
+            />
           </button>
 
           <div className=" max-w-xs flex flex-col items-center space-y-4">
@@ -60,7 +66,7 @@ export const MobileHeader = () => {
                 setIsOpen(false);
               }}
             >
-              <Image src={icons.user} alt="" /> Login
+              <CustomImage src={icons.user} alt="Login" /> Login
             </OutlineButton>
 
             <MainButton>Agende uma demonstração</MainButton>

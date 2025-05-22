@@ -1,10 +1,12 @@
 "use client";
 
-import { MainButton } from "@/components/Buttons/MainButton";
-import notebook from "@/assets/notebook.svg";
-import Image from "next/image";
-import { HabllaForm } from "@/components/HabllaForm";
 import { useState } from "react";
+
+import CustomImage from "@/components/CustomImage";
+import { MainButton } from "@/components/Buttons/MainButton";
+import { HabllaForm } from "@/components/HabllaForm";
+
+import notebook from "@/assets/notebook.svg";
 
 export const Control = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,14 +37,22 @@ export const Control = () => {
           </MainButton>
         </div>
       </article>
+
       <article className="flex justify-end mt-16 ">
-        <Image className="relative z-20" src={notebook} alt="" />
+        <CustomImage
+          src={notebook}
+          className="relative z-20"
+          alt="Software da Easy Alert"
+          style={{ width: "100%", height: "auto" }}
+        />
       </article>
+
       <div className="flex justify-center px-4 xl:hidden">
         <MainButton responsiveWidth="w-full">
           Agende uma demonstração
         </MainButton>
       </div>
+
       {isModalOpen && <HabllaForm onClose={closeModal} />}
     </section>
   );

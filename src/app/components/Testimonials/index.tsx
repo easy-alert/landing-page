@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CustomImage from "@/components/CustomImage";
 
 import { VideoCard } from "@/components/Cards/VideoCard";
 import { TestimonialsCarousel } from "@/components/Carousels/TestimonialsCarousel";
@@ -16,19 +16,19 @@ export const Testimonials = () => {
         </h4>
 
         <div className="flex relative w-full justify-center">
-          <Image
+          <CustomImage
             src={cross10Detail}
-            alt=""
+            alt="Detalhe esquerdo"
             className="absolute top-0 left-0 hidden xl:flex"
           />
-          <Image
+          <CustomImage
             src={cross8Detail}
-            alt=""
+            alt="Detalhe direito"
             className="absolute top-96 right-0 hidden xl:flex"
           />
-          <Image
+          <CustomImage
             src={cross3Detail}
-            alt=""
+            alt="Detalhe inferior direito"
             className="absolute -bottom-20 left-0 hidden xl:flex"
           />
 
