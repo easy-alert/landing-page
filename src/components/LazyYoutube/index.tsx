@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
+import CustomImage from "../CustomImage";
 
 import YoutubeIcon from "../../assets/youtubeFilled.svg";
 
@@ -23,7 +23,7 @@ export const LazyYoutube = ({
     <div className="flex items-center justify-center rounded-md shadow-shadowCard">
       {!isPlaying ? (
         <div onClick={() => setIsPlaying(true)} style={{ cursor: "pointer" }}>
-          <Image
+          <CustomImage
             src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
             alt="YouTube Video"
             width={width}
@@ -31,8 +31,9 @@ export const LazyYoutube = ({
             loading="lazy"
             style={{ objectFit: "cover" }}
           />
+          
           <span className="absolute mt-[-192.5] ml-[230] flex items-center justify-center">
-            <Image
+            <CustomImage
               src={YoutubeIcon}
               alt="YouTube Icon"
               width={100}
