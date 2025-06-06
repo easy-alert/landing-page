@@ -22,24 +22,53 @@ export const LazyYoutube = ({
   return (
     <div className="flex items-center justify-center rounded-md shadow-shadowCard">
       {!isPlaying ? (
-        <div onClick={() => setIsPlaying(true)} style={{ cursor: "pointer" }}>
-          <CustomImage
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-            alt="YouTube Video"
-            width={width}
-            height={height}
-            loading="lazy"
-            style={{ objectFit: "cover" }}
-          />
-          
-          <span className="absolute mt-[-192.5] ml-[230] flex items-center justify-center">
+        <div
+          role="button"
+          style={{ cursor: "pointer", width, height }}
+          className="group flex items-center justify-center overflow-hidden relative"
+          tabIndex={0}
+          onClick={() => setIsPlaying(true)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              setIsPlaying(true);
+            }
+          }}
+        >
+          <div
+            className="flex items-center justify-center w-full h-full"
+            style={{ position: "relative" }}
+          >
             <CustomImage
-              src={YoutubeIcon}
-              alt="YouTube Icon"
-              width={100}
-              height={100}
+              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              alt="YouTube Video"
+              width={width}
+              height={height}
+              loading="lazy"
+              style={{ objectFit: "cover", display: "block" }}
             />
-          </span>
+
+            <div
+              className="flex items-center justify-center"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background: "rgba(0,0,0,0.3)",
+                transition: "background 0.2s",
+                pointerEvents: "none",
+              }}
+            >
+              <CustomImage
+                src={YoutubeIcon}
+                alt="YouTube Icon"
+                width={100}
+                height={100}
+              />
+            </div>
+          </div>
         </div>
       ) : (
         <iframe
