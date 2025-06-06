@@ -8,7 +8,6 @@ import CustomImage from "@/components/CustomImage";
 
 import rightDetail from "@/assets/details/rightDetail.svg";
 import leftDetail from "@/assets/details/leftDetail.svg";
-import operationMap from "@/assets/onlyOperationMap.svg";
 import mapResponsive from "@/assets/mapResponsive.svg";
 
 export const OperationMap = () => {
@@ -33,7 +32,7 @@ export const OperationMap = () => {
 
       <div className="w-width647 flex xl:flex-1 items-center justify-center gap-44">
         <CustomImage
-          src={operationMap}
+          src={mapResponsive}
           alt="Mapa de operações"
           className="hidden xl:flex"
         />
