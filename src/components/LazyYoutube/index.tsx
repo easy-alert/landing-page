@@ -24,7 +24,9 @@ export const LazyYoutube = ({
       {!isPlaying ? (
         <div
           role="button"
-          tabindex="0"
+          style={{ cursor: "pointer", width, height }}
+          className="group flex items-center justify-center overflow-hidden relative"
+          tabIndex={0}
           onClick={() => setIsPlaying(true)}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
@@ -32,8 +34,6 @@ export const LazyYoutube = ({
               setIsPlaying(true);
             }
           }}
-          style={{ cursor: "pointer", width, height }}
-          className="group flex items-center justify-center overflow-hidden relative"
         >
           <div
             className="flex items-center justify-center w-full h-full"
