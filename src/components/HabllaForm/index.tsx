@@ -106,7 +106,7 @@ export const HabllaForm = ({ onClose }: HabllaFormProps) => {
       setErrors({});
 
       if (contactByWhatsapp) {
-        const whatsappMessage = `Olá, meu nome é ${name}. Gostaria de agendar uma demonstração.`;
+        const whatsappMessage = `Olá, visitei o site e gostaria de agendar uma demonstração.`;
         const whatsappUrl = `https://wa.me/5548991537724?text=${encodeURIComponent(
           whatsappMessage
         )}`;
